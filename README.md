@@ -8,6 +8,7 @@
 This browser based web application to ...
 * Hi my name is Chan.
 * Hi my name is Elaine.
+* Hi my name is Skylar.
 	
 ## Technologies
 Technologies used for this project:
