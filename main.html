@@ -1,434 +1,317 @@
-<<<<<<< HEAD
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>main_page</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/content_blocks_modernstyle.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Navigation-e-commerce.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/Soft-ui-Navbar.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Menus</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><b>MENUS</b></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Menus</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Favorites</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Address</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">BCIT, Burnaby, Canada</a>
-            </li>
-          </ul>
-          <form class="d-flex" style="margin-right: 150px;">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-          <button type="button" class="btn btn-warning" style="margin-right: 10px;">Upload</button>
-          <button type="button" class="btn btn-warning">Log Out</button>
+<body style="border-style: none;border-color: var(--bs-yellow);">
+    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search">
+        <div class="container"><a class="navbar-brand" href="#"
+                style="color: #ffa952;font-size: 25px;">Menu.It</a><button data-bs-toggle="collapse"
+                class="navbar-toggler" data-bs-target="#navcol-2"
+                style="background: #ffa952;color: var(--bs-white);"><span class="visually-hidden">Toggle
+                    navigation</span><span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
+                            fill="currentColor"></path>
+                    </svg></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Favorite</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <form class="me-auto search-form" target="_self">
+                    <div class="d-flex align-items-center"></div>
+                </form>
+                <div class="col padMar" style="margin-right: 5px;">
+                </div><a
+                    class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
+                    role="button" href="#"
+                    style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;">Profile</a>
+            </div>
         </div>
-      </div>
     </nav>
-    
-
-  <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Most Popular</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon bg-primary bg-gradient">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+    <div class="px-4 py-5 my-5 text-center" style="background: var(--bs-white);">
+        <h1 class="display-5 fw-bold" style="color: rgb(255,169,82);">Find a Restaurant</h1>
+        <div class="col-lg-6 m-auto">
+            <!--SEARCH BAR-->
+            <div class="input-group">
+                <input class="form-control autocomplete" type="text" placeholder="Search..."
+                    style="height: 32px; border-color: #ffa952;">
+                <button class="btn btn-warning" type="button"
+                    style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
+                    <i class="fa fa-search d-md-flex d-lg-flex align-items-md-center align-items-lg-center"
+                        style="color: rgb(255,169,82);border-color: var(--bs-white);"></i></button>
+            </div>
         </div>
-        <h2>Restaurant A</h2>
-        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon bg-primary bg-gradient">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
-        </div>
-        <h2>Restaurant B</h2>
-        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon bg-primary bg-gradient">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
-        </div>
-        <h2>Restaurant C</h2>
-        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
-        </a>
-      </div>
     </div>
-  </div>
-
-    
-<main>
-  
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <h2>Restaurants Near You</h2>
-      <br>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-muted">&copy; 2021 Company, Inc</p>
-
-    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-    </a>
-
-    <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul>
-  </footer>
-</div>
-
-      
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
-=======
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Comp 1800 Project</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-     <!-- Google Icons (Material Design)-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
-     <!--Own StyleSheet-->
-    <link href="styles/stylesheet.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <header class="p-3 bg-light text-white">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><b>MENUS</b></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-            </ul>
-              <a href="/login.html" target="blank"><button type="button" class="btn btn-outline-secondary me-2">Login</button></a>
-              <button type="button" class="btn btn-warning">Sign Up</button>
-          </div>
-        </div>
-      </nav>
-    </header>
-   
-    
-    <main>
-        <!--SEARCH BAR-->
-        <div class="container px-4 py-5 morepadding" id="featured-3">
-            <div class="container justify-content-center p-5">
-                <div class="row justify-content-center p-5">
-                    <div class="col-md-8">
-                        <div class="input-group mb-3"> <input type="text" class="form-control input-text" placeholder="Search a Restaurant" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-append"> <button class="btn btn-outline-warning btn-lg" type="button"><i class="material-icons">search</i></button> </div>
+    <div class="features-boxed" style="background: #ffa952;">
+        <div class="photo-gallery">
+            <div class="container-fluid">
+                <div class="px-lg-5">
+                    <br>
+                    <h2 class="pb-2 border-bottom justify-content-between" style="color: var(--bs-white)">Recently Added
+                        Menus</h2>
+                    <div class="row">
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt A</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/cody-davis-253928-unsplash_vfcdcl.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt B</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt C</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div
+                                            class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">
+                                            Featured</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt D</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt F</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="badge badge-primary px-3 rounded-pill font-weight-normal">New</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt G</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div
+                                            class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">
+                                            Featured</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/mike-meyers-737494-unsplash_yd11yq.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt H</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="badge badge-info px-3 rounded-pill font-weight-normal">Hot</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294930/ronald-cuyan-434484-unsplash_iktjid.jpg"
+                                    alt="" class="img-fluid card-img-top">
+                                <div class="p-4">
+                                    <h5> <a href="#" class="text-dark">Restaurnt I</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div
+                                            class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">
+                                            Featured</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
                     </div>
+                    <div class="py-5 text-right"><a href="#" class="btn px-5 py-3 text-uppercase" class="btn"
+                            style="background-color: var(--bs-white)">Show me
+                            more</a></div>
                 </div>
-            </div>
-        </div>
-
-        <!--RECENTLY ADDED-->
-        <div class="album py-5 bg-light">
-            <div class="container">
-            <h2>Recently Added Menus</h2>
-            <br>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-              <!--recent 1-->
-              <a href="restaurantmain.html"><button type="button" class="btn btn-lg btn-outline-secondary p-4" placeholder ="Torafuku">
-                <div class="col ">
-                  <div class="card">
-                    <svg width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  </div>
-                </div>
-              Torafuku</button></a>
-
-              <!--recent 2-->
-              <a href="restaurantmain.html"><button type="button" class="btn btn-lg btn-outline-secondary p-4" placeholder ="Nightingale" >
-                <div class="col ">
-                  <div class="card">
-                    <svg width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  </div>
-                </div>
-              Nightingale</button></a>
-            
-
-              <!--recent 1-->
-              <button type="button" class="btn btn-lg btn-outline-secondary p-4" placeholder ="Nightingale" >
-                <div class="col ">
-                  <div class="card">
-                    <svg width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  </div>
-                </div>
-              BT Cafe</button>
-
-              <!--recent 1-->
-              <button type="button" class="btn btn-lg btn-outline-secondary p-4" placeholder ="Nightingale" >
-                <div class="col ">
-                  <div class="card">
-                    <svg width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  </div>
-                </div>
-              Sushi California</button>
-
-              <!--recent 2-->
-              <button type="button" class="btn btn-lg btn-outline-secondary p-4" placeholder ="Nightingale" >
-                <div class="col ">
-                  <div class="card">
-                    <svg width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  </div>
-                </div>
-              Trattoria</button>
-
-              <!--recent 1-->
-              <button type="button" class="btn btn-lg btn-outline-secondary p-4" placeholder ="Nightingale" >
-                <div class="col ">
-                  <div class="card">
-                    <svg width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                  </div>
-                </div>
-              Marutama</button>
             </div>
         </div>
 
         <!--CATEGORIES-->
-        <div class="container px-4 py-5" id="hanging-icons">
-
-            <h2 class="pb-2 border-bottom justify-content-between">Categories -->More...</h2>
-            
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+        <div class="container-fluid">
+            <div class="px-lg-5">
+                <br>
+                <h2 class="pb-2 border-bottom justify-content-between" style="color: var(--bs-white)">Categories
+                    -->More...</h2>
+                <div class="row">
+                    <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
+                        <div class="col d-flex align-items-start">
+                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                                <svg class="bi" width="1em" height="1em">
+                                    <use xlink:href="#toggles2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2>American Cuisine</h2>
+                                <p>We'll add onto it with another sentence and probably just keep going until we run out
+                                    of words.</p>
+                                <a href="#" class="btn" style="background-color: var(--bs-white)">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                                <svg class="bi" width="1em" height="1em">
+                                    <use xlink:href="#cpu-fill" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2>Italian Cuisine</h2>
+                                <p>We'll add onto it with another sentence and probably just keep going until we run out
+                                    of words.</p>
+                                <a href="#" class="btn" style="background-color: var(--bs-white)">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                                <svg class="bi" width="1em" height="1em">
+                                    <use xlink:href="#tools" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2>Chinese Cuisine</h2>
+                                <p>We'll add onto it with another sentence and probably just keep going until we run out
+                                    of words.</p>
+                                <a href="#" class="btn" style="background-color: var(--bs-white)">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                                <svg class="bi" width="1em" height="1em">
+                                    <use xlink:href="#tools" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2>Chinese Cuisine</h2>
+                                <p>We'll add onto it with another sentence and probably just keep going until we run out
+                                    of words.</p>
+                                <a href="#" class="btn" style="background-color: var(--bs-white)">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <h2>American Cuisine</h2>
-                  <p>We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                  <a href="#" class="btn btn-primary">
-                    View
-                  </a>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
-                </div>
-                <div>
-                  <h2>Italian Cuisine</h2>
-                  <p>We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                  <a href="#" class="btn btn-primary">
-                    View
-                  </a>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
-                </div>
-                <div>
-                  <h2>Chinese Cuisine</h2>
-                  <p>We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                  <a href="#" class="btn btn-primary">
-                    View
-                  </a>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
-                </div>
-                <div>
-                  <h2>Chinese Cuisine</h2>
-                  <p>We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                  <a href="#" class="btn btn-primary">
-                    View
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
-    
-    </main>
 
-    
+            <footer>
+                <footer class="footer-basic" style="height: 85px;">
+                    <ul class="list-inline">
+                        <li class="list-inline-item" style="font-size: 14px;"><a href="#">Home</a></li>
+                        <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
+                        <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
+                        <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
+                        <li class="list-inline-item"></li>
+                    </ul>
+                    <p class="copyright" style="margin-bottom: 0px;">Menu.It © 2021</p>
+                </footer>
+            </footer>
+            <div></div>
+            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-  </body>
->>>>>>> bf1fc249fcedfe31422c2d45d66e9548ab5c20ed
 </html>
