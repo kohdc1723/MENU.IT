@@ -4,50 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Menu.It</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
     <link rel="stylesheet" href="assets/css/content_blocks_modernstyle.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
-    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-e-commerce.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/Soft-ui-Navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Optional styles and scripts of your own -->
-    <link type="text/css" href="styles/my_style.css">
-
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Bootstrap FirebaseUI CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
-
-
-    <!-- Firebase 8 CDNs-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-
-    <!-- Link to the api keys for your firebase project -->
-    <script src="scripts/firebaseAPI.js"></script>
 </head>
 
-<body>
+<body style="border-style: none;border-color: var(--bs-yellow);">
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search">
         <div class="container"><a class="navbar-brand" href="index.html"
                 style="color: #ffa952;font-size: 25px;">Menu.It</a><button data-bs-toggle="collapse"
@@ -93,20 +67,51 @@
             </div>
         </div>
     </nav>
-
-    <div>
-        <div class="container">
-            <br><br><br><br>
-            <h1 class="display-6" style="text-align: center; color: #ffa952; font-weight: bold;">Welcome to Menu.it!
-            </h1>
-            <h1 class="display-6" style="text-align: center; color: #ffa952; font-weight: bold;">Let's Login!</h1>
-            <br>
+    <div class="px-4 py-5 my-5 text-center" style="background: var(--bs-white);">
+        <h1 class="display-5 fw-bold" style="color: rgb(255,169,82);">Find Menus Now!</h1>
+        <div class="col-lg-6 m-auto">
+            <p class="lead mb-4">Quisque at curabitur mollis ornare, malesuada maecenas. Orci elit tristique, malesuada
+                eu pharetra. Est praesent tortor porttitor aptent, amet quisque.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"><button
+                    class="btn btn-primary btn-lg d-lg-flex justify-content-lg-center align-items-lg-center px-4 gap-3"
+                    type="button"
+                    style="background: rgb(255,169,82);border-style: none;width: auto;font-size: 14px;height: auto;">Explore</button>
+            </div>
         </div>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
-        <br><br><br>
     </div>
-
+    <div class="features-boxed" style="background: #ffa952;">
+        <div class="container">
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box">
+                        <i class="la la-map-marker icon" style="color: var(--bs-white);"></i>
+                        <h3 class="name">Find a Restaurant<br></h3>
+                        <p class="description" style="color: var(--bs-white);">Aenean tortor est, vulputate quis leo in,
+                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#"
+                            style="color: var(--bs-white);border-color: var(--bs-white);">Learn more »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box">
+                        <i class="la la-check-circle icon" style="color: var(--bs-white);"></i>
+                        <h3 class="name">Check the Latest Menu<br></h3>
+                        <p class="description" style="color: var(--bs-white);">Aenean tortor est, vulputate quis leo in,
+                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#"
+                            style="color: var(--bs-white);border-color: var(--bs-white);">Learn more »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box">
+                        <i class="la la-cloud-upload icon" style="color: var(--bs-white);"></i>
+                        <h3 class="name">Upload images<br></h3>
+                        <p class="description" style="color: var(--bs-white);">Aenean tortor est, vulputate quis leo in,
+                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#"
+                            style="color: var(--bs-white);border-color: var(--bs-white);">Learn more »</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="card"></div>
     <footer>
         <footer class="footer-basic" style="height: 85px;">
@@ -120,48 +125,8 @@
             <p class="copyright" style="margin-bottom: 0px;">Menu.It © 2021</p>
         </footer>
     </footer>
+    <div></div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-    <script>
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        var uiConfig = {
-            callbacks: {
-                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-                    // User successfully signed in.
-                    // Return type determines whether we continue the redirect automatically
-                    // or whether we leave that to developer to handle.
-                    return true;
-                },
-                uiShown: function () {
-                    // The widget is rendered.
-                    // Hide the loader.
-                    document.getElementById('loader').style.display = 'none';
-                }
-            },
-            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-            signInFlow: 'popup',
-            signInSuccessUrl: 'main.html',
-            signInOptions: [
-                // Leave the lines as is for the providers you want to offer your users.
-                //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-                //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            tosUrl: '<your-tos-url>',
-            // Privacy policy url.
-            privacyPolicyUrl: '<your-privacy-policy-url>'
-        };
-
-        // The start method will wait until the DOM is loaded.
-        ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
 </body>
 
 </html>
