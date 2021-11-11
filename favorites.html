@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="assets/css/Soft-ui-Navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    
+
     <!-- Google Icons (Material Design)-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <body style="border-style: none;border-color: var(--bs-yellow);">
-    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search">
+    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search" style="position: sticky; top: 0">
         <div class="container"><a class="navbar-brand" href="main.html"
                 style="color: #ffa952;font-size: 25px;">Menu.It</a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-2"
@@ -47,98 +47,111 @@
                 </ul>
 
 
-            <div class="col padMar" style="margin-right: 5px;">
-                <!--SEARCH BAR-->
-                <div class="col justify-content-end" >
-                    <div class="input-group">
-                        <input class="form-control autocomplete" type="text" placeholder="Search..."
-                            style="height: 32px; border-color: #ffa952;">
-                        <button class="btn btn-warning" type="button"
-                            style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
-                            <i class="material-icons"
-                                style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
+                <div class="col padMar" style="margin-right: 5px;">
+                    <!--SEARCH BAR-->
+                    <div class="col justify-content-end">
+                        <div class="input-group">
+                            <input class="form-control autocomplete" type="text" placeholder="Search..."
+                                style="height: 32px; border-color: #ffa952;">
+                            <button class="btn btn-warning" type="button"
+                                style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
+                                <i class="material-icons"
+                                    style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!--UPLOAD and PROFILE-->
-            <a
-                class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
-                role="button" href="upload.html"
-                style="height: 32px;margin-left: 0px;margin-right:5px; background: #ffa952;font-size: 14px;width: 80px;">Upload</a>
-                <a
-                class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
-                role="button" href="#"
-                style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;">Profile</a>                    
+                <!--UPLOAD and PROFILE-->
+                <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
+                    role="button" href="upload.html"
+                    style="height: 32px;margin-left: 0px;margin-right:5px; background: #ffa952;font-size: 14px;width: 80px;">Upload</a>
+                <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
+                    role="button" href="profile.html"
+                    style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;">Profile</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <div class="container">
+        <div class="container" style="margin-bottom: 10%">
             <h1 class="py-5">Favorites <i class="material-icons">favorite</i></h1>
-            <!--Favorites--> 
-                    
+            <!--Favorites-->
+
             <div class="container d-grid gap-3">
                 <div class="row">
-                  <div class="col-sm-6" style="background-color: #ffa952">
-                    <div class="row p-3">
-                        <div class="col"><button>Restaurant A</button></div>
-                        <div class="col">
-                            <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px height= 200px/>
+                    <div class="col-sm-6" style="background-color: #ffa952">
+                        <div class="row p-3">
+                            <div class="col"><button>Restaurant A</button></div>
+                            <div class="col">
+                                <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px
+                                    height=200px />
+                            </div>
                         </div>
-                      </div>
-                  </div>
-                  
-                  
-                  <div class="col-sm-6" style="background-color: #ffa952">
-                    <div class="row p-3">
-                        <div class="col padding-right">
-                            <button type ="button">Restaurant A</button>
+                    </div>
+
+
+                    <div class="col-sm-6" style="background-color: #ffa952">
+                        <div class="row p-3">
+                            <div class="col padding-right">
+                                <button type="button">Restaurant A</button>
+                            </div>
+                            <div class="col">
+                                <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px
+                                    height=200px />
+                            </div>
                         </div>
-                        <div class="col">
-                            <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px height= 200px/>
-                        </div>
-                      </div>
-                  </div>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-6" style="background-color: #ffa952">
-                      <div class="row p-3">
-                          <div class="col">
-                            <button>Restaurant A</button>
-                          </div>
-                          <div class="col">
-                              <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px height= 200px/>
-                          </div>
+                        <div class="row p-3">
+                            <div class="col">
+                                <button>Restaurant A</button>
+                            </div>
+                            <div class="col">
+                                <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px
+                                    height=200px />
+                            </div>
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="col-sm-6" style="background-color: #ffa952">
-                      <div class="row p-3">
-                          <div class="col">
-                            <button>Restaurant A</button>
-                          </div>
-                          <div class="col">
-                              <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px height= 200px/>
-                          </div>
+                        <div class="row p-3">
+                            <div class="col">
+                                <button>Restaurant A</button>
+                            </div>
+                            <div class="col">
+                                <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" width=150px
+                                    height=200px />
+                            </div>
                         </div>
                     </div>
-                  </div>
-
                 </div>
-               
 
-            <div><!--end of container-->
-                       
-             
+            </div>
 
-        </div>
-        <!--container-->
+
+            <div>
+                <!--end of container-->
+
+
+
+            </div>
+            <!--container-->
     </main>
 
+    <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
+        <ul class="list-inline">
+            <li class="list-inline-item" style="font-size: 14px;"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
+            <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
+            <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
+            <li class="list-inline-item"></li>
+        </ul>
+        <p class="copyright">Menu.It © 2021</p>
+    </footer>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
