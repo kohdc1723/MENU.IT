@@ -10,4 +10,6 @@ const firebaseConfig = {
   
 
   const app = firebase.initializeApp(firebaseConfig);
-  
+
+  //initialize database in firebaseAPI script
+  const db = firebase.firestore();
