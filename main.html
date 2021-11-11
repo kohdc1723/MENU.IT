@@ -17,6 +17,22 @@
     <link rel="stylesheet" href="assets/css/Soft-ui-Navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
+    <!-- Bootstrap FirebaseUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebaseAPI.js"></script>
+
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -87,7 +103,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="restmain.html" class="text-dark">Restaurant A</a></h5>
+                                    <h5> <a href="restmain.html" class="text-dark" id="NV01">Restaurant A</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -104,7 +120,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/cody-davis-253928-unsplash_vfcdcl.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="#" class="text-dark">Restaurant B</a></h5>
+                                    <h5> <a href="#" class="text-dark" id="NV02">Restaurant B</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -122,7 +138,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="#" class="text-dark">Restaurant C</a></h5>
+                                    <h5> <a href="#" class="text-dark" id="NV03">Restaurant C</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -141,7 +157,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="#" class="text-dark">Restaurant D</a></h5>
+                                    <h5> <a href="#" class="text-dark" id="NV04">Restaurant D</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -158,7 +174,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="#" class="text-dark">Restaurant F</a></h5>
+                                    <h5> <a href="#" class="text-dark" id="NV05">Restaurant F</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -175,7 +191,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="#" class="text-dark">Restaurant G</a></h5>
+                                    <h5> <a href="#" class="text-dark" id="NV06">Restaurant G</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -194,7 +210,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/mike-meyers-737494-unsplash_yd11yq.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="#" class="text-dark">Restaurant H</a></h5>
+                                    <h5> <a href="#" class="text-dark" id="NV07">Restaurant H</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -211,7 +227,7 @@
                                     src="https://res.cloudinary.com/mhmd/image/upload/v1556294930/ronald-cuyan-434484-unsplash_iktjid.jpg"
                                     alt="" class="img-fluid card-img-top">
                                 <div class="p-4">
-                                    <h5> <a href="#" class="text-dark">Restaurant I</a></h5>
+                                    <h5> <a href="#" class="text-dark" id="NV08">Restaurant I</a></h5>
                                     <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
                                         elit</p>
                                     <div class="d-flex align-items-center justify-content-between">
@@ -314,7 +330,110 @@
                 <p class="copyright">Menu.It © 2021</p>
             </footer>
 
+            <!--------------------------------------------------------------------->
+            <!-- JS files: Your own JavaScript functions included here    -->
+            <!--------------------------------------------------------------------->
+
             <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+            <script>
+                function writeRestaurants() {
+                    //defines menuRef for the Menu database collection to create in Firestore to populate data
+                    var restaurantRef = db.collection("Restaurants");
+
+                    restaurantRef.add({
+                        restaurantname: "Marutama",
+                        phone: "604-123-4567",
+                        hours: "1PM-10PM",
+                        code: "NV01",
+                        pricepoint: "$"
+                    });
+                    restaurantRef.add({
+                        restaurantname: "So Hyang",
+                        phone: "604-321-4567",
+                        hours: "10AM-10PM",
+                        code: "NV02",
+                        pricepoint: "$$"
+                    });
+                    restaurantRef.add({
+                        restaurantname: "White Spot",
+                        phone: "604-122-4567",
+                        hours: "9AM-10PM",
+                        code: "NV03",
+                        pricepoint: "$$"
+                    });
+                    restaurantRef.add({
+                        restaurantname: "Hawkers Delight",
+                        phone: "604-121-4567",
+                        hours: "1PM-10PM",
+                        code: "NV04",
+                        pricepoint: "$"
+                    });
+                    restaurantRef.add({
+                        restaurantname: "Minami",
+                        phone: "604-321-4567",
+                        hours: "1PM-10PM",
+                        code: "NV05",
+                        pricepoint: "$$$"
+                    });
+                    restaurantRef.add({
+                        restaurantname: "Kissa Tanto",
+                        phone: "604-321-4567",
+                        hours: "1PM-10PM",
+                        code: "NV06",
+                        pricepoint: "$$$"
+                    });
+                    restaurantRef.add({
+                        restaurantname: "Nero",
+                        phone: "604-321-4567",
+                        hours: "1PM-10PM",
+                        code: "NV07",
+                        pricepoint: "$$"
+                    });
+                    restaurantRef.add({
+                        restaurantname: "Meet Fresh",
+                        phone: "604-321-4567",
+                        hours: "1PM-12AM",
+                        code: "NV08",
+                        pricepoint: "$$"
+                    });
+                }
+   
+                // writeRestaurants(); // only run once and commented this out
+
+                //populates the restaurant names with corresponding code
+                function displayRestaurants() {
+                db.collection("Restaurants").get()
+                    .then(allRestaurants => {
+                        allRestaurants.forEach(doc => {
+                            var restaurantName = doc.data().restaurantname; //gets the name field
+                            var restaurantID = doc.data().code; //gets the unique ID field
+                            console.log(restaurantID);
+                            document.getElementById(restaurantID).innerText = restaurantName;
+                })
+                })
+                                }
+                displayRestaurants();
+
+                function writeMenus() {
+                    var menusRef = db.collection("Menus");
+
+                    menusRef.add({
+                        restaurantname: "Marutama",
+                        city: "Vancouver",
+                        dateuploaded: "11102021",
+                        uploader: "123456"
+                    });
+                    menusRef.add({
+                        restaurantname: "So Hyang",
+                        city: "Vancouver",
+                        dateuploaded: "09102019",
+                        uploader: "123456"
+                    });
+                }
+                // writeMenus();
+
+            </script>
 </body>
 
 </html>
