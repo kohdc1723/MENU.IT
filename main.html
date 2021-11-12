@@ -417,19 +417,18 @@
 
                 function writeMenus() {
                     var menusRef = db.collection("Menus");
-
-                    menusRef.add({
-                        restaurantname: "Marutama",
-                        city: "Vancouver",
-                        dateuploaded: "11102021",
-                        uploader: "123456"
-                    });
-                    menusRef.add({
-                        restaurantname: "So Hyang",
-                        city: "Vancouver",
-                        dateuploaded: "09102019",
-                        uploader: "123456"
-                    });
+                    var restaurantnameRef = db.collection("Restaurants").get()
+                        .then(allRestaurants => {
+                            allRestaurants.forEach(doc => {
+                                var restaurantName = doc.data().restaurantname;
+                                menusRef.add({
+                                    restaurantname: restaurantName,
+                                    location: "Vancouver",
+                                    dateuploaded: "11112021",
+                                    uploader: "Chan"
+                                });
+                            })
+                        })
                 }
                 // writeMenus();
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container py-3">
+    <div class="card">
+        <div class="card-body">
+            Whitespot
+            <img id="Whitespotmenu" src="./images/blah.jpg" width=100 height=100 />
+            <button onclick="document.getElementById('Whitespotmenufile').click()">Upload Menu</button>
+            <input type='file' id="Whitespotmenufile" style="display:none">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            Sushi Town
+            <img id="Sushitownmenu" src="./images/blah.jpg" width=100 height=100 />
+            <button onclick="document.getElementById('Sushitownmenufile').click()">Upload Menu</button>
+            <input type='file' id="Sushitownmenufile" style="display:none">
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function AddUploadListener(restaurantID) {
+            const fileInput = document.getElementById(restaurantID + "menufile"); // pointer #1
+            const image = document.getElementById(restaurantID + "menu"); // pointer #2
+
+            //attach listener to input file
+            //when this file changes, do something
+            fileInput.addEventListener('change', function (e) {
+
+                //the change event returns a file "e.target.files[0]"
+                var blob = URL.createObjectURL(e.target.files[0]);
+
+                //change the DOM img element source to point to this file
+                image.src = blob; //assign the "src" property of the "img" tag
+
+								//do database stuff:  add to menu collection
+								AddNewMenu(restaurantID);
+            })
+        }
+    AddUploadListener("Whitespot");
+    AddUploadListener("Sushitown");
+  </script>
+</body>
+</html>
