@@ -329,8 +329,8 @@
                             <div class="col-sm fs-4 pt-1">
                                 <div><i class="material-icons fs-3 p-2">call</i><span id="NV08"></span></div>
                                 <div><i class="material-icons p-2">schedule</i> Monday 12PM-10PM</div>
-                                <div><i class="material-icons p-2">sell</i> </div>
-                                <div><i class="material-icons p-2">map</i> Vancouver, BC</div>
+                                <div><i class="material-icons p-2">sell</i><span id="pricepoint"></span></div>
+                                <div><i class="material-icons p-2">map</i><span></span>Vancouver, BC</span> </div>
                             </div>
                         </div>
 
@@ -377,33 +377,32 @@
         // writeMenus();
 
         function displayMenus() {
-                db.collection("Menus").get()
-                    .then(allMenus => {
-                        allMenus.forEach(doc => {
-                            var menuName = doc.data().restaurantname; //gets the name field
-                            var menuID = doc.data().code; //gets the unique ID field
-                            console.log(menuID);
-                            document.getElementById(menuID).innerText = menuName;
-                        })
+            db.collection("Menus").get()
+                .then(allMenus => {
+                    allMenus.forEach(doc => {
+                        var menuName = doc.data().restaurantname; //gets the name field
+                        var menuID = doc.data().code; //gets the unique ID field
+                        console.log(menuID);
+                        document.getElementById(menuID).innerText = menuName;
                     })
-                }
-                displayMenus();
-
-
-        //populates the restaurant names with corresponding code
-        function displayPhone() {
-        db.collection("Restaurants").get()
-            .then(allRestaurants => {
-                allRestaurants.forEach(doc => {
-                    var restaurantPhone = doc.data().phone; //gets the phone field
-                    var restaurantID = doc.data().code; //gets the unique ID field
-                    console.log(restaurantID);
-                    document.getElementById(restaurantID).innerText = restaurantPhone;
                 })
-            })
-        }
-        displayPhone();
+            }
+        displayMenus();
 
+
+        //populates the restaurant phone with corresponding code
+        function displayPhone() {
+            db.collection("Restaurants").get()
+                .then(allRestaurants => {
+                    allRestaurants.forEach(doc => {
+                        var restaurantPhone = doc.data().phone; //gets the phone field
+                        var restaurantID = doc.data().code; //gets the unique ID field
+                        console.log(restaurantID);
+                        document.getElementById(restaurantID).innerText = restaurantPhone;
+                    })
+                })
+            }
+        displayPhone();
 
     </script>
 
