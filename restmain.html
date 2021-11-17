@@ -19,7 +19,7 @@
 
     <!-- Bootstrap FirebaseUI CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Firebase 8 CDNs-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -196,42 +196,43 @@
                 <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
                     href="upload.html"
                     style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
-                <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button" href="profile.html"
+                <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
+                    href="profile.html"
                     style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px; width: 80px; align-items: center">Profile</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <!--Restaurant Name and Validated Date-->
-        <div class="container">
-            <div class="row py-5 just">
-                <div class="col-sm">
-                    <div>
-                        <h1 id="11JL">Restaurant A <button><i class="material-icons"
-                                    style="color: #ffa952">favorite_border</i></button></h1>
-                    </div>
-
-                </div>
-                <div class="col-sm">
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1 id="11JL">Restaurant A <button><i class="material-icons"
+                                style="color: #ffa952">favorite_border</i></button></h1>
                     <h3>Last Validated on: <span class="fw-bold">November 4, 2021</span></h3>
+                </div>
+                <div class="col-sm-4 sup" style="border: 5px solid #ffa952">
+                    <h4>Restaurant Information</h4>
+                    <div class="col-sm fs-4 pt-1 sticky-top">
+                        <div><i class="material-icons fs-3 p-2">call</i><span id="NV08"></span></div>
+                        <div><i class="material-icons p-2">schedule</i> Monday 12PM-10PM</div>
+                        <div><i class="material-icons p-2">sell</i><span id="pricepoint"></span></div>
+                        <div><i class="material-icons p-2">map</i><span></span>Vancouver, BC</span> </div>
+                    </div>
                 </div>
             </div>
 
-
-            <div class="album py-5 bg-light p-2">
-                <div class="container" style="background-color: #ffa952; margin-bottom: 5%">
-                    <div class="row p-4">
-                        <div class="col-sm-8">
-
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col">
                             <!--menu images-->
                             <h3>Menus</h3>
                             <div class="container">
                                 <div class="text-center" style="background-color: black; margin-bottom: 10px;">
                                     <img id="myImg" src="images/restaurantmenu.jpg" alt="aaa"
                                         class="img-fluid align-self-center"
-                                        style="object-fit: contain; width: 600px; height: 320px;">
-                                    <!-- The Modal -->
+                                        style="object-fit: contain; width: 600px; height: 320px;"><!-- The Modal -->
                                     <div id="myModal" class="modal">
                                         <span class="close">&times;</span>
                                         <div id="modal-contents">
@@ -261,9 +262,6 @@
                                             </div>
                                             <div id="buttons"></div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                                 <div class="row">
@@ -289,55 +287,46 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!--food images-->
-                            <h3 class="pt-4">Food Images</h3>
-                            <div class="container">
-                                <div class="text-center" style="background-color: black; margin-bottom: 10px;">
-                                    <img src="images/menu4.jpg" alt="..." class="img-fluid align-self-center"
-                                        style="object-fit: contain; width: 600px; height: 320px;">
+                        <!--food images-->
+                        <h3 class="pt-4">Food Images</h3>
+                        <div class="container">
+                            <div class="text-center" style="background-color: black; margin-bottom: 10px;">
+                                <img src="images/menu4.jpg" alt="..." class="img-fluid align-self-center"
+                                    style="object-fit: contain; width: 600px; height: 320px;">
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
+                                    </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
                                     </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
                                     </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!--restaurant information-->
-                        <div class="col-sm">
-                            <h4>Restaurant Information</h4>
-                            <div class="col-sm fs-4 pt-1">
-                                <div><i class="material-icons fs-3 p-2">call</i><span id="NV08"></span></div>
-                                <div><i class="material-icons p-2">schedule</i> Monday 12PM-10PM</div>
-                                <div><i class="material-icons p-2">sell</i><span id="pricepoint"></span></div>
-                                <div><i class="material-icons p-2">map</i><span></span>Vancouver, BC</span> </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
+
+
         </div>
+
     </main>
 
     <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
@@ -357,23 +346,23 @@
 
     <script>
         function writeMenus() {
-                    var menusRef = db.collection("Menus");
+            var menusRef = db.collection("Menus");
 
-                    menusRef.add({
-                        restaurantname: "Marutama",
-                        city: "Vancouver",
-                        dateuploaded: "11102021",
-                        uploader: "123456",
-                        code:"11JL"
-                    });
-                    menusRef.add({
-                        restaurantname: "So Hyang",
-                        city: "Vancouver",
-                        dateuploaded: "09102019",
-                        uploader: "123456",
-                        code:"12JL"
-                    });
-                }
+            menusRef.add({
+                restaurantname: "Marutama",
+                city: "Vancouver",
+                dateuploaded: "11102021",
+                uploader: "123456",
+                code: "11JL"
+            });
+            menusRef.add({
+                restaurantname: "So Hyang",
+                city: "Vancouver",
+                dateuploaded: "09102019",
+                uploader: "123456",
+                code: "12JL"
+            });
+        }
         // writeMenus();
 
         function displayMenus() {
@@ -386,7 +375,7 @@
                         document.getElementById(menuID).innerText = menuName;
                     })
                 })
-            }
+        }
         displayMenus();
 
 
@@ -401,7 +390,7 @@
                         document.getElementById(restaurantID).innerText = restaurantPhone;
                     })
                 })
-            }
+        }
         displayPhone();
 
     </script>
