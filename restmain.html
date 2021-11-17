@@ -373,7 +373,6 @@
     <!--------------------------------------------------------------------->
 
     <script>
-<<<<<<< HEAD
         // function writeMenus() {
         //     var menusRef = db.collection("Menus");
 
@@ -421,25 +420,6 @@
                 })
         }
         displayPhone();
-=======
-        // Dynamically creates restmain.html using querystring data.
-        var querystring = new URLSearchParams(window.location.search);
-        db.collection('Restaurants').doc(querystring.get('id')).get().then((result) => {
-            document.getElementById('restoName').innerHTML = result.data().restaurantname;
-            document.getElementById('contact').innerHTML = result.data().phone;
-            document.getElementById('hours').innerHTML = result.data().hours;
-        })
-
-        var upload = document.getElementById('uploadimage');
-        upload.addEventListener('click', ()=>{
-            var querystring = new URLSearchParams(window.location.search);
-            console.log(querystring.get('id'));
-            window.location.href = `./upload.html?id=${querystring.get('id')}`;
-        })
-
-        var datevalidated = document.getElementById('datevalidated');
-        datevalidated.innerHTML = 
->>>>>>> 66b73b4798d8f5839d8a43f0fd22bb6c980efca1
 
 
         ////////////////////////FOR FAVORITES/////////////////////////////////////

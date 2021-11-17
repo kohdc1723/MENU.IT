@@ -109,10 +109,12 @@
                                         alt="" class="img-fluid card-img-top">
                                     <div class="p-4">
                                         <h5> <a href="" class="text-dark" id="restoName"></a></h5>
-                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing
                                             elit</p>
                                         <div class="d-flex align-items-center justify-content-between">
-                                            <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
+                                            <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,210 +129,138 @@
         </div>
     </div>
 
-        <!--CATEGORIES-->
-        <div class="container-fluid">
-            <div class="px-lg-5">
-                <br>
-                <h2 class="pb-2 border-bottom justify-content-between" style="color: var(--bs-white)">Categories</h2>
-                <div class="row">
-                    <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-                        <div class="col d-flex align-items-start">
-                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                                <svg class="bi" width="1em" height="1em">
-                                    <use xlink:href="#toggles2" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h2>American</h2>
-                                <p>We'll add onto it with another sentence and probably just keep going until we run out
-                                    of words.</p>
-                                <a href="#" class="btn" style="background-color: var(--bs-white)">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col d-flex align-items-start">
-                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                                <svg class="bi" width="1em" height="1em">
-                                    <use xlink:href="#cpu-fill" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h2>Italian</h2>
-                                <p>We'll add onto it with another sentence and probably just keep going until we run out
-                                    of words.</p>
-                                <a href="#" class="btn" style="background-color: var(--bs-white)">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col d-flex align-items-start">
-                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                                <svg class="bi" width="1em" height="1em">
-                                    <use xlink:href="#tools" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h2>Chinese</h2>
-                                <p>We'll add onto it with another sentence and probably just keep going until we run out
-                                    of words.</p>
-                                <a href="#" class="btn" style="background-color: var(--bs-white)">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col d-flex align-items-start">
-                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                                <svg class="bi" width="1em" height="1em">
-                                    <use xlink:href="#tools" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h2>Japanese</h2>
-                                <p>We'll add onto it with another sentence and probably just keep going until we run out
-                                    of words.</p>
-                                <a href="#" class="btn" style="background-color: var(--bs-white)">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
+        <ul class="list-inline">
+            <li class="list-inline-item" style="font-size: 14px;"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
+            <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
+            <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
+            <li class="list-inline-item"></li>
+        </ul>
+        <p class="copyright">Menu.It © 2021</p>
+    </footer>
 
-            <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
-                <ul class="list-inline">
-                    <li class="list-inline-item" style="font-size: 14px;"><a href="#">Home</a></li>
-                    <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
-                    <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
-                    <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
-                    <li class="list-inline-item"></li>
-                </ul>
-                <p class="copyright">Menu.It © 2021</p>
-            </footer>
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
 
-            <!--------------------------------------------------------------------->
-            <!-- JS files: Your own JavaScript functions included here    -->
-            <!--------------------------------------------------------------------->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        function writeRestaurants() {
+            //defines menuRef for the Menu database collection to create in Firestore to populate data
+            var restaurantRef = db.collection("Restaurants");
 
-            <script>
-                function writeRestaurants() {
-                    //defines menuRef for the Menu database collection to create in Firestore to populate data
-                    var restaurantRef = db.collection("Restaurants");
+            restaurantRef.add({
+                restaurantname: "Marutama",
+                phone: "604-123-4567",
+                hours: "1PM-10PM",
+                code: "NV01",
+                pricepoint: "$"
+            });
+            restaurantRef.add({
+                restaurantname: "So Hyang",
+                phone: "604-321-4567",
+                hours: "10AM-10PM",
+                code: "NV02",
+                pricepoint: "$$"
+            });
+            restaurantRef.add({
+                restaurantname: "White Spot",
+                phone: "604-122-4567",
+                hours: "9AM-10PM",
+                code: "NV03",
+                pricepoint: "$$"
+            });
+            restaurantRef.add({
+                restaurantname: "Hawkers Delight",
+                phone: "604-121-4567",
+                hours: "1PM-10PM",
+                code: "NV04",
+                pricepoint: "$"
+            });
+            restaurantRef.add({
+                restaurantname: "Minami",
+                phone: "604-321-4567",
+                hours: "1PM-10PM",
+                code: "NV05",
+                pricepoint: "$$$"
+            });
+            restaurantRef.add({
+                restaurantname: "Kissa Tanto",
+                phone: "604-321-4567",
+                hours: "1PM-10PM",
+                code: "NV06",
+                pricepoint: "$$$"
+            });
+            restaurantRef.add({
+                restaurantname: "Nero",
+                phone: "604-321-4567",
+                hours: "1PM-10PM",
+                code: "NV07",
+                pricepoint: "$$"
+            });
+            restaurantRef.add({
+                restaurantname: "Meet Fresh",
+                phone: "604-321-4567",
+                hours: "1PM-12AM",
+                code: "NV08",
+                pricepoint: "$$"
+            });
+        }
 
-                    restaurantRef.add({
-                        restaurantname: "Marutama",
-                        phone: "604-123-4567",
-                        hours: "1PM-10PM",
-                        code: "NV01",
-                        pricepoint: "$"
-                    });
-                    restaurantRef.add({
-                        restaurantname: "So Hyang",
-                        phone: "604-321-4567",
-                        hours: "10AM-10PM",
-                        code: "NV02",
-                        pricepoint: "$$"
-                    });
-                    restaurantRef.add({
-                        restaurantname: "White Spot",
-                        phone: "604-122-4567",
-                        hours: "9AM-10PM",
-                        code: "NV03",
-                        pricepoint: "$$"
-                    });
-                    restaurantRef.add({
-                        restaurantname: "Hawkers Delight",
-                        phone: "604-121-4567",
-                        hours: "1PM-10PM",
-                        code: "NV04",
-                        pricepoint: "$"
-                    });
-                    restaurantRef.add({
-                        restaurantname: "Minami",
-                        phone: "604-321-4567",
-                        hours: "1PM-10PM",
-                        code: "NV05",
-                        pricepoint: "$$$"
-                    });
-                    restaurantRef.add({
-                        restaurantname: "Kissa Tanto",
-                        phone: "604-321-4567",
-                        hours: "1PM-10PM",
-                        code: "NV06",
-                        pricepoint: "$$$"
-                    });
-                    restaurantRef.add({
-                        restaurantname: "Nero",
-                        phone: "604-321-4567",
-                        hours: "1PM-10PM",
-                        code: "NV07",
-                        pricepoint: "$$"
-                    });
-                    restaurantRef.add({
-                        restaurantname: "Meet Fresh",
-                        phone: "604-321-4567",
-                        hours: "1PM-12AM",
-                        code: "NV08",
-                        pricepoint: "$$"
-                    });
-                }
+        //writeRestaurants(); // only run once and commented this out
 
-                //writeRestaurants(); // only run once and commented this out
+        //populates the restaurant names with corresponding code
+        function displayRestaurants() {
+            db.collection("Restaurants").get()
+                .then(allRestaurants => {
+                    allRestaurants.forEach(doc => {
+                        var restaurantName = doc.data().restaurantname; //gets the name field
+                        var restaurantID = doc.data().code; //gets the unique ID field
+                        console.log(restaurantID);
+                        document.getElementById(restaurantID).innerText = restaurantName;
+                    })
+                })
+        }
+        displayRestaurants();
 
-                //populates the restaurant names with corresponding code
-                function displayRestaurants() {
-                    db.collection("Restaurants").get()
-                        .then(allRestaurants => {
-                            allRestaurants.forEach(doc => {
-                                var restaurantName = doc.data().restaurantname; //gets the name field
-                                var restaurantID = doc.data().code; //gets the unique ID field
-                                console.log(restaurantID);
-                                document.getElementById(restaurantID).innerText = restaurantName;
-                            })
-                        })
-                }
-                displayRestaurants();
+        // Creating Menus collection by getting restaurantname from Restaurants collection.
+        function writeMenus() {
+            var menusRef = db.collection("Menus");
+            var restaurantnameRef = db.collection("Restaurants").get()
+                .then(allRestaurants => {
+                    allRestaurants.forEach(doc => {
+                        var restaurantName = doc.data().restaurantname;
+                        menusRef.add({
+                            restaurantname: restaurantName,
+                            location: "Vancouver",
+                            dateuploaded: "11112021",
+                            uploader: "Chan"
+                        });
+                    })
+                })
+        }
+        // writeMenus();
 
-                // Creating Menus collection by getting restaurantname from Restaurants collection.
-                function writeMenus() {
-                    var menusRef = db.collection("Menus");
-                    var restaurantnameRef = db.collection("Restaurants").get()
-                        .then(allRestaurants => {
-                            allRestaurants.forEach(doc => {
-                                var restaurantName = doc.data().restaurantname;
-                                menusRef.add({
-                                    restaurantname: restaurantName,
-                                    location: "Vancouver",
-                                    dateuploaded: "11112021",
-                                    uploader: "Chan"
-                                });
-                            })
-                        })
-                }
-                // writeMenus();
+        function displayResto() {
+            var restoCardTemplate = document.getElementById('restoCardTemplate');
+            var restoCardGroup = document.getElementById('restoCardGroup');
 
-                function displayResto() {
-                    var restoCardTemplate = document.getElementById('restoCardTemplate');
-                    var restoCardGroup = document.getElementById('restoCardGroup');
+            db.collection('Restaurants').get()
+                .then(updatedRestos => {
+                    updatedRestos.forEach(doc => {
+                        var restoName = doc.data().restaurantname;
 
-                    db.collection('Restaurants').get()
-                        .then(updatedRestos => {
-                            updatedRestos.forEach(doc => {
-                                var restoName = doc.data().restaurantname;
-
-                                var testRestoCard = restoCardTemplate.content.cloneNode(true);
-                                testRestoCard.querySelector('#restoName').innerHTML = restoName;
-                                testRestoCard.querySelector('a').href = `./restmain.html?id=${doc.id}`;
-                                restoCardGroup.appendChild(testRestoCard);
-                            })
-                        })
-                }
-                displayResto();
-            </script>
+                        var testRestoCard = restoCardTemplate.content.cloneNode(true);
+                        testRestoCard.querySelector('#restoName').innerHTML = restoName;
+                        testRestoCard.querySelector('a').href = `./restmain.html?id=${doc.id}`;
+                        restoCardGroup.appendChild(testRestoCard);
+                    })
+                })
+        }
+        displayResto();
+    </script>
 </body>
 
 </html>
