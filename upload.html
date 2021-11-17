@@ -80,7 +80,7 @@
                     href="upload.html"
                     style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
                 <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
-                    href="profile.html"
+                    href="profile.html" id="profile-name"
                     style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px; width: 80px; align-items: center">Profile</a>
             </div>
         </div>
@@ -211,6 +211,7 @@
         // Upload Function
         // Save image in fire storage
         // Create document in Menus Collection including image url
+
         var upload = document.getElementById('upload');
         upload.addEventListener('click', function () {
             firebase.auth().onAuthStateChanged(function (user) {
