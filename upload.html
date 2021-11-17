@@ -124,7 +124,7 @@
                     <!--Details of upload-->
                     <div class="col align-self-center">
                         <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="R2menufile">
+                            <input type="file" class="form-control" id="menuimagefile">
                             <label onclick="document.getElementById('R2menufile').click()" class="input-group-text"
                                 for="inputGroupFile02">Upload</label>
                         </div>
@@ -163,7 +163,7 @@
         <div class="container px-4">
             <div class="container text-center">
                 <div class="d-grid gap-2 col-6 mx-auto p-5">
-                    <a href="restmain.html"><button class="btn btn-primary btn-lg"
+                    <a><button class="btn btn-primary btn-lg"
                             style="background-color: #ffa952; border-color: #ffa952;" type="button" id="upload">Post</button></a>
                 </div>
             </div>
@@ -256,7 +256,7 @@
                                 db.collection('Menus').add({
                                     restaurantid: restaurantid,
                                     description: description,
-                                    location: "BBY",
+                                    // location: "BBY",
                                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                                     uploader: user.uid,
                                     imageURL: url

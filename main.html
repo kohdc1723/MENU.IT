@@ -226,21 +226,21 @@
         displayRestaurants();
 
         // Creating Menus collection by getting restaurantname from Restaurants collection.
-        function writeMenus() {
-            var menusRef = db.collection("Menus");
-            var restaurantnameRef = db.collection("Restaurants").get()
-                .then(allRestaurants => {
-                    allRestaurants.forEach(doc => {
-                        var restaurantName = doc.data().restaurantname;
-                        menusRef.add({
-                            restaurantname: restaurantName,
-                            location: "Vancouver",
-                            dateuploaded: "11112021",
-                            uploader: "Chan"
-                        });
-                    })
-                })
-        }
+        // function writeMenus() {
+        //     var menusRef = db.collection("Menus");
+        //     var restaurantnameRef = db.collection("Restaurants").get()
+        //         .then(allRestaurants => {
+        //             allRestaurants.forEach(doc => {
+        //                 var restaurantName = doc.data().restaurantname;
+        //                 menusRef.add({
+        //                     restaurantname: restaurantName,
+        //                     //location: "Vancouver",
+        //                     dateuploaded: "11112021",
+        //                     uploader: "Chan"
+        //                 });
+        //             })
+        //         })
+        // }
         // writeMenus();
 
         function displayResto() {
