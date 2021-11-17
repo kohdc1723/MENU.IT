@@ -20,6 +20,6 @@ const firebaseConfig = {
         profilename.innerHTML = user.displayName;
     } else {
         // No user is signed in.
-        profilename.innerHTML = "Profile";
+        profilename.innerHTML = "SignIn";
     }
 })
