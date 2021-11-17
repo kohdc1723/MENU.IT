@@ -296,38 +296,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!--food images-->
-                            <h3 class="pt-4">Food Images</h3>
-                            <div class="container">
-                                <div class="text-center" style="background-color: black; margin-bottom: 10px;">
-                                    <img src="images/menu4.jpg" alt="..."    class="img-fluid align-self-center"
-                                        style="object-fit: contain; width: 600px; height: 320px;">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
                         </div>
 
                         <!--restaurant information-->
@@ -377,6 +346,17 @@
             console.log(querystring.get('id'));
             window.location.href = `./upload.html?id=${querystring.get('id')}`;
         })
+
+        var datevalidated = document.getElementById('datevalidated');
+        datevalidated.innerHTML = 
+
+
+        ////////////////////////FOR FAVORITES/////////////////////////////////////
+        function getFavorites(id) {
+            localStorage.setItem ('hikeID', id);
+                console.log("favorite heart has been clicked");
+                localStorage.setItem('favoriteID', id)
+        }
 
     </script>
 
