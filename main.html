@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Menu.It</title>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -29,6 +31,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebaseAPI.js"></script>
@@ -97,149 +100,24 @@
                     <br>
                     <h2 class="pb-2 border-bottom justify-content-between" style="color: var(--bs-white)">Recently Added
                         Menus</h2>
-                    <div class="row">
+                    <div class="row" id="restoCardGroup">
                         <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="restmain.html" class="text-dark" id="NV01">Restaurant A</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/cody-davis-253928-unsplash_vfcdcl.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="#" class="text-dark" id="NV02">Restaurant B</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend
+                        <template id="restoCardTemplate">
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                                <div class="bg-white rounded shadow-sm"><img
+                                        src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg"
+                                        alt="" class="img-fluid card-img-top">
+                                    <div class="p-4">
+                                        <h5> <a href="" class="text-dark" id="restoName"></a></h5>
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit</p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="#" class="text-dark" id="NV03">Restaurant C</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div
-                                            class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">
-                                            Featured</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="#" class="text-dark" id="NV04">Restaurant D</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="#" class="text-dark" id="NV05">Restaurant F</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="badge badge-primary px-3 rounded-pill font-weight-normal">New</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="#" class="text-dark" id="NV06">Restaurant G</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div
-                                            class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">
-                                            Featured</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/mike-meyers-737494-unsplash_yd11yq.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="#" class="text-dark" id="NV07">Restaurant H</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="badge badge-info px-3 rounded-pill font-weight-normal">Hot</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294930/ronald-cuyan-434484-unsplash_iktjid.jpg"
-                                    alt="" class="img-fluid card-img-top">
-                                <div class="p-4">
-                                    <h5> <a href="#" class="text-dark" id="NV08">Restaurant I</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit</p>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div
-                                            class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">
-                                            Featured</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
+                        </template>
                     </div>
                     <div class="py-5 text-center"><a href="#" class="btn px-5 py-3 text-uppercase" class="btn"
                             style="background-color: var(--bs-white)">Show me
@@ -247,6 +125,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <!--CATEGORIES-->
         <div class="container-fluid">
@@ -318,6 +197,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
             <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
                 <ul class="list-inline">
@@ -399,7 +279,7 @@
                     });
                 }
 
-                // writeRestaurants(); // only run once and commented this out
+                //writeRestaurants(); // only run once and commented this out
 
                 //populates the restaurant names with corresponding code
                 function displayRestaurants() {
@@ -415,6 +295,7 @@
                 }
                 displayRestaurants();
 
+                // Creating Menus collection by getting restaurantname from Restaurants collection.
                 function writeMenus() {
                     var menusRef = db.collection("Menus");
                     var restaurantnameRef = db.collection("Restaurants").get()
@@ -432,6 +313,23 @@
                 }
                 // writeMenus();
 
+                function displayResto() {
+                    var restoCardTemplate = document.getElementById('restoCardTemplate');
+                    var restoCardGroup = document.getElementById('restoCardGroup');
+
+                    db.collection('Restaurants').get()
+                        .then(updatedRestos => {
+                            updatedRestos.forEach(doc => {
+                                var restoName = doc.data().restaurantname;
+
+                                var testRestoCard = restoCardTemplate.content.cloneNode(true);
+                                testRestoCard.querySelector('#restoName').innerHTML = restoName;
+                                testRestoCard.querySelector('a').href = `./restmain.html?id=${doc.id}`;
+                                restoCardGroup.appendChild(testRestoCard);
+                            })
+                        })
+                }
+                displayResto();
             </script>
 </body>
 

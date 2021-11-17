@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Restaurant A</title>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -29,12 +31,17 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebaseAPI.js"></script>
 
+    <!--own stylesheet-->
+    <link rel="stylesheet" href="styles/stylesheet.css">
+
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
     <style>
         #myImg {
             border-radius: 5px;
@@ -207,8 +214,11 @@
         <div class="container p-3">
             <div class="row">
                 <div class="col-sm-8">
-                    <h1 id="11JL">Restaurant A <button><i class="material-icons"
-                                style="color: #ffa952">favorite_border</i></button></h1>
+                    <h1 id="H3OuUyL6FNwgJSm8FfV7">Restaurant A</h1>
+                        <span id ="favorite_choice">
+                            <a href ="favorites.html" target="blank" onclick="setFavorites('H3OuUyL6FNwgJSm8FfV7')"><button><i class="material-icons"
+                                style="color: #ffa952">favorite_border</i></button></a>
+                        </span>
                     <h3>Last Validated on: <span class="fw-bold">November 4, 2021</span></h3>
                 </div>
                 <div class="col-sm-4 sup" style="border: 5px solid #ffa952">
@@ -219,13 +229,19 @@
                         <div><i class="material-icons p-2">sell</i><span id="pricepoint"></span></div>
                         <div><i class="material-icons p-2">map</i><span></span>Vancouver, BC</span> </div>
                     </div>
+
+                </div>
+                <div class="col-sm">
+                    <h3 id="NV08">Last Validated on: <span id="datevalidated" class="fw-bold"></span></h3>
+                    <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button" id="uploadimage"
+                  style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="row">
-                        <div class="col">
+            <div class="album py-5 bg-light p-2">
+                <div class="container" style="background-color: #ffa952; margin-bottom: 5%">
+                    <div class="row p-4">
+                        <div class="col-sm-8">
                             <!--menu images-->
                             <h3>Menus</h3>
                             <div class="container">
@@ -289,13 +305,13 @@
                             </div>
                         </div>
 
-                        <!--food images-->
-                        <h3 class="pt-4">Food Images</h3>
-                        <div class="container">
-                            <div class="text-center" style="background-color: black; margin-bottom: 10px;">
-                                <img src="images/menu4.jpg" alt="..." class="img-fluid align-self-center"
-                                    style="object-fit: contain; width: 600px; height: 320px;">
-                            </div>
+                            <!--food images-->
+                            <h3 class="pt-4">Food Images</h3>
+                            <div class="container">
+                                <div class="text-center" style="background-color: black; margin-bottom: 10px;">
+                                    <img src="images/menu4.jpg" alt="..."    class="img-fluid align-self-center"
+                                        style="object-fit: contain; width: 600px; height: 320px;">
+                                </div>
 
                             <div class="row">
                                 <div class="col">
@@ -320,6 +336,18 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!--restaurant information-->
+                        <div class="col-sm">
+                            <h4>Restaurant Information</h4>
+                            <div class="col-sm fs-4 pt-1">
+                                <div><i class="material-icons fs-3 p-2">call</i><span id="contact"></span></div>
+                                <div><i class="material-icons p-2">schedule</i><span id="hours"></span></div>
+                                <div><i class="material-icons p-2">sell</i><span id="price"></span></div>
+                                <div><i class="material-icons p-2">map</i><span id="location"></span></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -345,34 +373,35 @@
     <!--------------------------------------------------------------------->
 
     <script>
-        function writeMenus() {
-            var menusRef = db.collection("Menus");
+<<<<<<< HEAD
+        // function writeMenus() {
+        //     var menusRef = db.collection("Menus");
 
-            menusRef.add({
-                restaurantname: "Marutama",
-                city: "Vancouver",
-                dateuploaded: "11102021",
-                uploader: "123456",
-                code: "11JL"
-            });
-            menusRef.add({
-                restaurantname: "So Hyang",
-                city: "Vancouver",
-                dateuploaded: "09102019",
-                uploader: "123456",
-                code: "12JL"
-            });
-        }
-        // writeMenus();
+        //     menusRef.add({
+        //         restaurantname: "Marutama",
+        //         city: "Vancouver",
+        //         dateuploaded: "11102021",
+        //         uploader: "123456",
+        //         code: "11JL"
+        //     });
+        //     menusRef.add({
+        //         restaurantname: "So Hyang",
+        //         city: "Vancouver",
+        //         dateuploaded: "09102019",
+        //         uploader: "123456",
+        //         code: "12JL"
+        //     });
+        // }
+        // // writeMenus();
 
         function displayMenus() {
             db.collection("Menus").get()
                 .then(allMenus => {
                     allMenus.forEach(doc => {
-                        var menuName = doc.data().restaurantname; //gets the name field
-                        var menuID = doc.data().code; //gets the unique ID field
+                        var restaurantName = doc.data().description; //gets the name field
+                        var menuID = doc.data().restaurantid; //gets the unique ID field
                         console.log(menuID);
-                        document.getElementById(menuID).innerText = menuName;
+                        document.getElementById(menuID).innerText = restaurantName;
                     })
                 })
         }
@@ -392,6 +421,33 @@
                 })
         }
         displayPhone();
+=======
+        // Dynamically creates restmain.html using querystring data.
+        var querystring = new URLSearchParams(window.location.search);
+        db.collection('Restaurants').doc(querystring.get('id')).get().then((result) => {
+            document.getElementById('restoName').innerHTML = result.data().restaurantname;
+            document.getElementById('contact').innerHTML = result.data().phone;
+            document.getElementById('hours').innerHTML = result.data().hours;
+        })
+
+        var upload = document.getElementById('uploadimage');
+        upload.addEventListener('click', ()=>{
+            var querystring = new URLSearchParams(window.location.search);
+            console.log(querystring.get('id'));
+            window.location.href = `./upload.html?id=${querystring.get('id')}`;
+        })
+
+        var datevalidated = document.getElementById('datevalidated');
+        datevalidated.innerHTML = 
+>>>>>>> 66b73b4798d8f5839d8a43f0fd22bb6c980efca1
+
+
+        ////////////////////////FOR FAVORITES/////////////////////////////////////
+        function getFavorites(id) {
+            localStorage.setItem ('hikeID', id);
+                console.log("favorite heart has been clicked");
+                localStorage.setItem('favoriteID', id)
+        }
 
     </script>
 
@@ -422,6 +478,7 @@
         span.onclick = function () {
             modal.style.display = "none";
         }
+
     </script>
 </body>
 
