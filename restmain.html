@@ -219,26 +219,23 @@
 
                 </div>
                 <div class="col-sm">
-                    <h3 id="NV08">Last Validated on: <span id="datevalidated" class="fw-bold">November 4, 2021</span></h3>
+                    <h3 id="NV08">Last Validated on: <span id="datevalidated" class="fw-bold"></span></h3>
                     <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button" id="uploadimage"
                   style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
                 </div>
             </div>
 
-
             <div class="album py-5 bg-light p-2">
                 <div class="container" style="background-color: #ffa952; margin-bottom: 5%">
                     <div class="row p-4">
                         <div class="col-sm-8">
-
                             <!--menu images-->
                             <h3>Menus</h3>
                             <div class="container">
                                 <div class="text-center" style="background-color: black; margin-bottom: 10px;">
                                     <img id="myImg" src="images/restaurantmenu.jpg" alt="aaa"
                                         class="img-fluid align-self-center"
-                                        style="object-fit: contain; width: 600px; height: 320px;">
-                                    <!-- The Modal -->
+                                        style="object-fit: contain; width: 600px; height: 320px;"><!-- The Modal -->
                                     <div id="myModal" class="modal">
                                         <span class="close">&times;</span>
                                         <div id="modal-contents">
@@ -268,9 +265,6 @@
                                             </div>
                                             <div id="buttons"></div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                                 <div class="row">
@@ -296,6 +290,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
                             <!--food images-->
                             <h3 class="pt-4">Food Images</h3>
@@ -305,26 +300,25 @@
                                         style="object-fit: contain; width: 600px; height: 320px;">
                                 </div>
 
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
                                     </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
                                     </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
                                     </div>
-                                    <div class="col">
-                                        <div>
-                                            <img src="images/dummyimg.png" class="img-fluid" />
-                                        </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <img src="images/dummyimg.png" class="img-fluid" />
                                     </div>
                                 </div>
                             </div>
@@ -344,7 +338,10 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
+
     </main>
 
     <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
@@ -377,6 +374,9 @@
             console.log(querystring.get('id'));
             window.location.href = `./upload.html?id=${querystring.get('id')}`;
         })
+
+        var datevalidated = document.getElementById('datevalidated');
+        datevalidated.innerHTML = 
 
     </script>
 
