@@ -212,16 +212,35 @@
         <div class="container">
             <div class="row py-5 just">
                 <div class="col-sm">
-                    <div>
-                        <h1 id="restoName"></h1>
-                        <button><i class="material-icons" style="color: #ffa952">favorite_border</i></button>
+
+                    <h1 id="restoName"></h1>
+                    <h3>Last Validated on: <span id="datevalidated" class="fw-bold">November 4, 2021</span></h3>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
+                                id="uploadimage"
+                                style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
+                        </div>
+                        <div class="col-sm-6 mx-5">
+                            <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
+                                id="favorite"
+                                style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Favorite</a>
+                        </div>
+
+
                     </div>
 
                 </div>
+
+                <!--restaurant information-->
                 <div class="col-sm">
-                    <h3 id="NV08">Last Validated on: <span id="datevalidated" class="fw-bold">November 4, 2021</span></h3>
-                    <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button" id="uploadimage"
-                  style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
+                    <h4>Restaurant Information</h4>
+                    <div class="col-sm fs-4 pt-1">
+                        <div><i class="material-icons fs-3 p-2">call</i><span id="contact"></span></div>
+                        <div><i class="material-icons p-2">schedule</i><span id="hours"></span></div>
+                        <div><i class="material-icons p-2">sell</i><span id="price"></span></div>
+                        <div><i class="material-icons p-2">map</i><span id="location"></span></div>
+                    </div>
                 </div>
             </div>
 
@@ -297,11 +316,11 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
-
                     </div>
+
                 </div>
             </div>
+        </div>
         </div>
     </main>
 
@@ -330,20 +349,20 @@
         })
 
         var upload = document.getElementById('uploadimage');
-        upload.addEventListener('click', ()=>{
+        upload.addEventListener('click', () => {
             var querystring = new URLSearchParams(window.location.search);
             console.log(querystring.get('id'));
             window.location.href = `./upload.html?id=${querystring.get('id')}`;
         })
 
         var datevalidated = document.getElementById('datevalidated');
-        datevalidated.innerHTML = 
+        // datevalidated.innerHTML =
 
         ////////////////////////FOR FAVORITES/////////////////////////////////////
         function getFavorites(id) {
-            localStorage.setItem ('hikeID', id);
-                console.log("favorite heart has been clicked");
-                localStorage.setItem('favoriteID', id)
+            localStorage.setItem('hikeID', id);
+            console.log("favorite heart has been clicked");
+            localStorage.setItem('favoriteID', id)
         }
 
     </script>
