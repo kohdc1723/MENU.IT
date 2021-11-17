@@ -250,8 +250,9 @@
                                     imageURL: url
                                 })
                                     .then(() => {
+                                        var restaurantid = querystring.get('id');
                                         alert('uploaded!')
-                                        window.location.href = "./main.html";
+                                        window.location.href = `./restmain.html?id=${restaurantid}`;
                                     }).catch((err) => {
                                         console.log(err);
                                     })
