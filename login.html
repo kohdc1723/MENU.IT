@@ -121,6 +121,7 @@
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
     <script>
+
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         var uiConfig = {
@@ -167,11 +168,6 @@
         ui.start('#firebaseui-auth-container', uiConfig);
 
         //
-        firebase.auth().onAuthStateChanged((user)=>{
-            if (user) {
-                console.log(user);
-            }
-        })
     </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 

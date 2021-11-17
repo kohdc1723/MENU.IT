@@ -30,7 +30,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Link to the api keys for your firebase project -->
-    <script src="scripts/firebaseAPI.js"></script>
+    <script src="./scripts/firebaseAPI.js"></script>
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -70,8 +70,8 @@
                     role="button" href="upload.html"
                     style="height: 32px;margin-left: 0px;margin-right:5px; background: #ffa952;font-size: 14px;width: 80px;">Upload</a>
                 <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
-                    role="button" href="profile.html"
-                    style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;">Profile</a>
+                    role="button" href="profile.html" id="profile-name"
+                    style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;"></a>
             </div>
         </div>
     </nav>
@@ -214,6 +214,17 @@
         }
 
         // writeRestaurants(); // only run once and commented this out
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                var profilename = document.getElementById('profile-name');
+                profilename.innerHTML = user.displayName;
+            } else {
+                // No user is signed in.
+                profilename.innerHTML = "Profile";
+            }
+        })
 
         //populates the restaurant names with corresponding code
         function displayRestaurants() {

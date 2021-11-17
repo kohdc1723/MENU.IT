@@ -12,3 +12,14 @@ const firebaseConfig = {
   const app = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
   const storage = firebase.storage();
+
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        // User is signed in.
+        var profilename = document.getElementById('profile-name');
+        profilename.innerHTML = user.displayName;
+    } else {
+        // No user is signed in.
+        profilename.innerHTML = "SignIn";
+    }
+})
