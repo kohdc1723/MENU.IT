@@ -90,24 +90,6 @@
         <div class="container">
             <h1 class="py-5">Upload Restaurant Photos</h1>
 
-            <h2>Restaurant Name</h2>
-            <!--SEARCH BAR-->
-            <div class="container px-4" id="featured-3">
-                <div class="container justify-content-center">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="input-group mb-3"> <input type="text" class="form-control input-text"
-                                    placeholder="Search a Restaurant" aria-label="Recipient's username"
-                                    aria-describedby="basic-addon2">
-                                <div class="input-group-append"> <button class="btn btn-outline-warning btn-sm"
-                                        style="border-color: #ffa952;" type="button"><i class="material-icons"
-                                            style="color: #ffa952">search</i></button> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <h2 class="pt-5">Choose Menu Photos</h2>
             <!--UPLOAD MENU IMAGE-->
             <div class="album py-5 bg-light p-2">
@@ -119,7 +101,6 @@
                         <textarea class="form-control mt-2" id="description" placeholder="Description"></textarea>
                         <input type="text" class="form-control mt-2" id="price" placeholder="Price">
                         <input class="form-control mt-2" type="file" id="menuimagefile">
-                        <button class="btn btn-danger mt-3" id="upload">Upload</button>
                     </div>
 
                     <!--Thumbnail of upload-->
@@ -178,106 +159,12 @@
             </div>
         </div>
 
-        <!--FOOD IMAGE-->
-        <h2 class="pt-5">Choose Food Photos</h2>
-
-        <!--UPLOAD FOOD IMAGE 1-->
-        <div class="album py-5 bg-light p-2">
-            <div class="container" style="background-color: #ffa952">
-                <br>
-                <h4>Upload 1</h4>
-                <div class="row ">
-                    <!--Details of upload-->
-                    <div class="col align-self-center">
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02">
-                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                        </div>
-
-                        <div class="mb-3">
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Dish Name*</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-sm">
-                            </div>
-
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Price*</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-sm">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Thumbnail of upload-->
-                    <div class="col-sm">
-                        <div class="col">
-                            <div class="text-center pb-5">
-                                <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--UPLOAD FOOD IMAGE 2-->
-        <div class="album py-5 bg-light p-2">
-            <div class="container" style="background-color: #ffa952">
-                <br>
-                <h4>Upload 2</h4>
-                <div class="row ">
-                    <!--Details of upload-->
-                    <div class="col align-self-center">
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02">
-                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                        </div>
-
-                        <div class="mb-3">
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Dish Name*</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-sm">
-                            </div>
-
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Price*</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-sm">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Thumbnail of upload-->
-                    <div class="col-sm">
-                        <div class="col">
-                            <div class="text-center pb-5">
-                                <img src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--MORE FOOD IMAGE-->
-        <div class="album py-5 bg-light p-2">
-            <div class="container ">
-                <div class="row ">
-                    <div class="input-group mb-3 justify-content-center">
-                        <button type="button" class="btn btn-outline-secondary ">Upload More (+)</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!--POST-->
         <div class="container px-4">
             <div class="container text-center">
                 <div class="d-grid gap-2 col-6 mx-auto p-5">
                     <a href="restmain.html"><button class="btn btn-primary btn-lg"
-                            style="background-color: #ffa952; border-color: #ffa952;" type="button">Post</button></a>
+                            style="background-color: #ffa952; border-color: #ffa952;" type="button" id="upload">Post</button></a>
                 </div>
             </div>
         </div>
