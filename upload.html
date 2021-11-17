@@ -113,34 +113,22 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!--UPLOAD MENU IMAGE-->
-        <div class="album py-5 bg-light p-2">
-            <div class="container" style="background-color: #ffa952">
-                <br>
-                <h4>Upload 2</h4>
-                <div class="row ">
-                    <!--Details of upload-->
-                    <div class="col align-self-center">
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="R2menufile">
-                            <label onclick="document.getElementById('R2menufile').click()" class="input-group-text"
-                                for="inputGroupFile02">Upload</label>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Description (Optional):
-                            </label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
+            <div class="album py-5 bg-light p-2">
+                <div class="container" style="background-color: #ffa952">
+                    <br>
+                    <h4>Upload 2</h4>
+                    <div class="container mt-3">
+                        <input type="text" class="form-control mt-2" id="title" placeholder="Title">
+                        <textarea class="form-control mt-2" id="description" placeholder="Description"></textarea>
+                        <input type="text" class="form-control mt-2" id="price" placeholder="Price">
+                        <input class="form-control mt-2" type="file" id="menuimagefile">
                     </div>
 
                     <!--Thumbnail of upload-->
                     <div class="col-sm">
                         <div class="col">
                             <div class="text-center pb-5">
-                                <img id="R2menu" src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" />
+                                <img id="menuimage" src="images/dummyimg.png" alt="Placeholder" class="img-thumbnail" />
                             </div>
                         </div>
                     </div>
