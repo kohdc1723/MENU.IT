@@ -304,37 +304,6 @@
                                 </div>
                             </div>
                         </div>
-
-                            <!--food images-->
-                            <h3 class="pt-4">Food Images</h3>
-                            <div class="container">
-                                <div class="text-center" style="background-color: black; margin-bottom: 10px;">
-                                    <img src="images/menu4.jpg" alt="..."    class="img-fluid align-self-center"
-                                        style="object-fit: contain; width: 600px; height: 320px;">
-                                </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <!--restaurant information-->
@@ -373,55 +342,6 @@
     <!--------------------------------------------------------------------->
 
     <script>
-<<<<<<< HEAD
-        // function writeMenus() {
-        //     var menusRef = db.collection("Menus");
-
-        //     menusRef.add({
-        //         restaurantname: "Marutama",
-        //         city: "Vancouver",
-        //         dateuploaded: "11102021",
-        //         uploader: "123456",
-        //         code: "11JL"
-        //     });
-        //     menusRef.add({
-        //         restaurantname: "So Hyang",
-        //         city: "Vancouver",
-        //         dateuploaded: "09102019",
-        //         uploader: "123456",
-        //         code: "12JL"
-        //     });
-        // }
-        // // writeMenus();
-
-        function displayMenus() {
-            db.collection("Menus").get()
-                .then(allMenus => {
-                    allMenus.forEach(doc => {
-                        var restaurantName = doc.data().description; //gets the name field
-                        var menuID = doc.data().restaurantid; //gets the unique ID field
-                        console.log(menuID);
-                        document.getElementById(menuID).innerText = restaurantName;
-                    })
-                })
-        }
-        displayMenus();
-
-
-        //populates the restaurant phone with corresponding code
-        function displayPhone() {
-            db.collection("Restaurants").get()
-                .then(allRestaurants => {
-                    allRestaurants.forEach(doc => {
-                        var restaurantPhone = doc.data().phone; //gets the phone field
-                        var restaurantID = doc.data().code; //gets the unique ID field
-                        console.log(restaurantID);
-                        document.getElementById(restaurantID).innerText = restaurantPhone;
-                    })
-                })
-        }
-        displayPhone();
-=======
         // Dynamically creates restmain.html using querystring data.
         var querystring = new URLSearchParams(window.location.search);
         db.collection('Restaurants').doc(querystring.get('id')).get().then((result) => {
@@ -439,7 +359,6 @@
 
         var datevalidated = document.getElementById('datevalidated');
         datevalidated.innerHTML = 
->>>>>>> 66b73b4798d8f5839d8a43f0fd22bb6c980efca1
 
 
         ////////////////////////FOR FAVORITES/////////////////////////////////////
