@@ -81,8 +81,8 @@
                     href="upload.html"
                     style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
                 <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
-                    href="profile.html"
-                    style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px; width: 80px; align-items: center">Profile</a>
+                    id="signout"
+                    style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px; width: 80px; align-items: center">SignOut</a>
             </div>
         </div>
     </nav>
@@ -307,6 +307,12 @@
             })
             document.getElementById('personalInfoFields').disabled = true;
         }
+
+        var signout = document.getElementById('signout');
+        signout.addEventListener('click', ()=>{
+            firebase.auth().signOut();
+            window.location.href = "./main.html";
+        })
 
     </script>
 
