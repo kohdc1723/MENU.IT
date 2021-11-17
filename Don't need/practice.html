@@ -4,48 +4,162 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- Firebase 8 CDNs-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+  <!-- Link to the api keys for your firebase project -->
+  <script src="scripts/firebaseAPI.js"></script>
 </head>
+
 <body>
   <div class="container py-3">
     <div class="card">
-        <div class="card-body">
-            Whitespot
-            <img id="Whitespotmenu" src="./images/blah.jpg" width=100 height=100 />
-            <button onclick="document.getElementById('Whitespotmenufile').click()">Upload Menu</button>
-            <input type='file' id="Whitespotmenufile" style="display:none">
-        </div>
+      <div class="card-body">
+        Whitespot
+        <img id="Whitespotmenu" src="./images/blah.jpg" width=100 height=100 />
+        <button id="upload">Upload Menu</button>
+        <input type='file' id="Whitespotmenufile" style="display:none">
+      </div>
     </div>
     <div class="card">
+      <div class="card-body">
+        Sushi Town
+        <img id="Sushitownmenu" src="./images/blah.jpg" width=100 height=100 />
+        <button onclick="document.getElementById('Sushitownmenufile').click()">Upload Menu</button>
+        <input type='file' id="Sushitownmenufile" style="display:none">
+      </div>
+    </div>
+  </div>
+
+  <template id="hikeCardTemplate">
+    <div class="card">
+        <img class="card-img-top">
         <div class="card-body">
-            Sushi Town
-            <img id="Sushitownmenu" src="./images/blah.jpg" width=100 height=100 />
-            <button onclick="document.getElementById('Sushitownmenufile').click()">Upload Menu</button>
-            <input type='file' id="Sushitownmenufile" style="display:none">
+            <h5 class="card-title">placeholder</h5>
+            <p class="card-length">placeholder</p>
+            <a href="review.html" class="link-primary">Write a review</a>
+            <br>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+            </p>
+            <a href="#" class="btn btn-primary" style="float: right">Read more</a>
+        </div>
+    </div>
+  </template>
+
+  <div class="photo-gallery">
+    <div class="container-fluid">
+        <div class="px-lg-5">
+            <br>
+            <h2 class="pb-2 border-bottom justify-content-between" style="color: var(--bs-white)">Recently Added
+                Menus</h2>
+            <div class="row" id="topeightcontainer"></div>
         </div>
     </div>
   </div>
 
+
   <script>
+    var upload = document.getElementById('upload');
+    upload.addEventListener('click', function () {
+      console.log('upload!');
+    })
+
     function AddUploadListener(restaurantID) {
-            const fileInput = document.getElementById(restaurantID + "menufile"); // pointer #1
-            const image = document.getElementById(restaurantID + "menu"); // pointer #2
+      const fileInput = document.getElementById(restaurantID + "menufile"); // pointer #1
+      const image = document.getElementById(restaurantID + "menu"); // pointer #2
 
-            //attach listener to input file
-            //when this file changes, do something
-            fileInput.addEventListener('change', function (e) {
+      //attach listener to input file
+      //when this file changes, do something
+      fileInput.addEventListener('change', function (e) {
 
-                //the change event returns a file "e.target.files[0]"
-                var blob = URL.createObjectURL(e.target.files[0]);
+        //the change event returns a file "e.target.files[0]"
+        var blob = URL.createObjectURL(e.target.files[0]);
 
-                //change the DOM img element source to point to this file
-                image.src = blob; //assign the "src" property of the "img" tag
+        //change the DOM img element source to point to this file
+        image.src = blob; //assign the "src" property of the "img" tag
 
-								//do database stuff:  add to menu collection
-								AddNewMenu(restaurantID);
-            })
-        }
+        //do database stuff:  add to menu collection
+        AddNewMenu(restaurantID);
+      })
+    }
     AddUploadListener("Whitespot");
     AddUploadListener("Sushitown");
+
+    function RegisterNewMenu(restID) {
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // User is signed in.
+          // Add a new menu to the "menu's collection
+          function addMenuDoc(restid, userid) {
+            //create the menu document first
+            db.collection("Menus").add({
+              name: restid,
+              uploader: userid,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
+              .then(function (doc) {
+                //"doc" points to the newly created menu document
+                // and doc.id is the auto-generated id for that menu
+                updateUserDoc(doc.id, userid);
+              })
+          }
+          //--------------------------------------------------
+          // Create a new menu doc
+          // To get a timestamp of the system to store into firestore field
+          // use "serverTimestamp()" function
+          //--------------------------------------------------
+          function addMenuDoc(restid, userid) {
+            //create the menu document first
+            db.collection("menus").add({
+              name: restid,
+              uploader: userid,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
+              .then(function (doc) {
+                //"doc" points to the newly created menu document
+                // and doc.id is the auto-generated id for that menu
+                updateUserDoc(doc.id, userid);
+              })
+          }
+          addMenuDoc(restID, user.uid);
+
+        } else {
+          // No user is signed in.
+        }
+      });
+    }
+
+    function displayHikes() {
+            let hikeCardTemplate = document.getElementById("hikeCardTemplate");
+            let hikeCardGroup = document.getElementById("topeightcontainer");
+            
+            db.collection("Restaurants").get()
+                .then(allHikes => {
+                    allHikes.forEach(doc => {
+                        var hikeName = doc.data().restaurantname; //gets the name field
+                        var hikeID = doc.data().code; //gets the unique ID field
+												var hikeLength = doc.data().length; //gets the length field
+
+
+                        let testHikeCard = hikeCardTemplate.content.cloneNode(true);
+                        testHikeCard.querySelector('.card-title').innerHTML = hikeName;
+                        testHikeCard.querySelector('.card-length').innerHTML = hikeLength;
+                        testHikeCard.querySelector('a').href = `http://127.0.0.1:5501/restmain.html?id=${doc.id}`;
+                        testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
+                        hikeCardGroup.appendChild(testHikeCard);
+                    })
+
+                })
+        }
+        displayHikes();
   </script>
 </body>
+
 </html>
