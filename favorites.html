@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="assets/css/Soft-ui-Navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="./scripts/firebaseAPI.js"></script>
+
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
@@ -65,8 +73,8 @@
             <!--UPLOAD and PROFILE-->
             <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button" href="upload.html"
               style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a>
-            <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button" href="profile.html"
-              style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px; width: 80px; align-items: center">Profile</a>
+            <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
+              style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center" id="profile-name"></a>
           </div>
         </div>
       </nav>
@@ -128,8 +136,6 @@
         </ul>
         <p class="copyright">Menu.It © 2021</p>
     </footer>
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

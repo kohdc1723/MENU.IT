@@ -18,8 +18,16 @@ const firebaseConfig = {
         // User is signed in.
         var profilename = document.getElementById('profile-name');
         profilename.innerHTML = user.displayName;
+        profilename.addEventListener('click', ()=> {
+          window.location.href = "./profile.html";
+        })
+        
     } else {
         // No user is signed in.
-        profilename.innerHTML = "SignIn";
+        var profilename = document.getElementById('profile-name');
+        profilename.innerHTML = "Sign In";
+        profilename.addEventListener('click', ()=> {
+          window.location.href = "./login.html";
+        })
     }
 })
