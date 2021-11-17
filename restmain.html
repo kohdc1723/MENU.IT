@@ -33,6 +33,9 @@
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebaseAPI.js"></script>
 
+    <!--own stylesheet-->
+    <link rel="stylesheet" href="styles/stylesheet.css">
+
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <style>
@@ -207,8 +210,11 @@
         <div class="container p-3">
             <div class="row">
                 <div class="col-sm-8">
-                    <h1 id="11JL">Restaurant A <button><i class="material-icons"
-                                style="color: #ffa952">favorite_border</i></button></h1>
+                    <h1 id="H3OuUyL6FNwgJSm8FfV7">Restaurant A</h1>
+                        <span id ="favorite_choice">
+                            <a href ="favorites.html" target="blank" onclick="setFavorites('H3OuUyL6FNwgJSm8FfV7')"><button><i class="material-icons"
+                                style="color: #ffa952">favorite_border</i></button></a>
+                        </span>
                     <h3>Last Validated on: <span class="fw-bold">November 4, 2021</span></h3>
                 </div>
                 <div class="col-sm-4 sup" style="border: 5px solid #ffa952">
@@ -345,34 +351,34 @@
     <!--------------------------------------------------------------------->
 
     <script>
-        function writeMenus() {
-            var menusRef = db.collection("Menus");
+        // function writeMenus() {
+        //     var menusRef = db.collection("Menus");
 
-            menusRef.add({
-                restaurantname: "Marutama",
-                city: "Vancouver",
-                dateuploaded: "11102021",
-                uploader: "123456",
-                code: "11JL"
-            });
-            menusRef.add({
-                restaurantname: "So Hyang",
-                city: "Vancouver",
-                dateuploaded: "09102019",
-                uploader: "123456",
-                code: "12JL"
-            });
-        }
-        // writeMenus();
+        //     menusRef.add({
+        //         restaurantname: "Marutama",
+        //         city: "Vancouver",
+        //         dateuploaded: "11102021",
+        //         uploader: "123456",
+        //         code: "11JL"
+        //     });
+        //     menusRef.add({
+        //         restaurantname: "So Hyang",
+        //         city: "Vancouver",
+        //         dateuploaded: "09102019",
+        //         uploader: "123456",
+        //         code: "12JL"
+        //     });
+        // }
+        // // writeMenus();
 
         function displayMenus() {
             db.collection("Menus").get()
                 .then(allMenus => {
                     allMenus.forEach(doc => {
-                        var menuName = doc.data().restaurantname; //gets the name field
-                        var menuID = doc.data().code; //gets the unique ID field
+                        var restaurantName = doc.data().description; //gets the name field
+                        var menuID = doc.data().restaurantid; //gets the unique ID field
                         console.log(menuID);
-                        document.getElementById(menuID).innerText = menuName;
+                        document.getElementById(menuID).innerText = restaurantName;
                     })
                 })
         }
@@ -392,6 +398,14 @@
                 })
         }
         displayPhone();
+
+
+        ////////////////////////FOR FAVORITES/////////////////////////////////////
+        function getFavorites(id) {
+            localStorage.setItem ('hikeID', id);
+                console.log("favorite heart has been clicked");
+                localStorage.setItem('favoriteID', id)
+        }
 
     </script>
 
