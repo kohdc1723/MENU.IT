@@ -304,48 +304,6 @@
                                 </div>
                             </div>
                         </div>
-
-                            <!--food images-->
-                            <h3 class="pt-4">Food Images</h3>
-                            <div class="container">
-                                <div class="text-center" style="background-color: black; margin-bottom: 10px;">
-                                    <img src="images/menu4.jpg" alt="..."    class="img-fluid align-self-center"
-                                        style="object-fit: contain; width: 600px; height: 320px;">
-                                </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <img src="images/dummyimg.png" class="img-fluid" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--restaurant information-->
-                        <div class="col-sm">
-                            <h4>Restaurant Information</h4>
-                            <div class="col-sm fs-4 pt-1">
-                                <div><i class="material-icons fs-3 p-2">call</i><span id="contact"></span></div>
-                                <div><i class="material-icons p-2">schedule</i><span id="hours"></span></div>
-                                <div><i class="material-icons p-2">sell</i><span id="price"></span></div>
-                                <div><i class="material-icons p-2">map</i><span id="location"></span></div>
-                            </div>
                         </div>
 
                     </div>
@@ -373,54 +331,23 @@
     <!--------------------------------------------------------------------->
 
     <script>
-        // function writeMenus() {
-        //     var menusRef = db.collection("Menus");
+        // Dynamically creates restmain.html using querystring data.
+        var querystring = new URLSearchParams(window.location.search);
+        db.collection('Restaurants').doc(querystring.get('id')).get().then((result) => {
+            document.getElementById('restoName').innerHTML = result.data().restaurantname;
+            document.getElementById('contact').innerHTML = result.data().phone;
+            document.getElementById('hours').innerHTML = result.data().hours;
+        })
 
-        //     menusRef.add({
-        //         restaurantname: "Marutama",
-        //         city: "Vancouver",
-        //         dateuploaded: "11102021",
-        //         uploader: "123456",
-        //         code: "11JL"
-        //     });
-        //     menusRef.add({
-        //         restaurantname: "So Hyang",
-        //         city: "Vancouver",
-        //         dateuploaded: "09102019",
-        //         uploader: "123456",
-        //         code: "12JL"
-        //     });
-        // }
-        // // writeMenus();
+        var upload = document.getElementById('uploadimage');
+        upload.addEventListener('click', ()=>{
+            var querystring = new URLSearchParams(window.location.search);
+            console.log(querystring.get('id'));
+            window.location.href = `./upload.html?id=${querystring.get('id')}`;
+        })
 
-        function displayMenus() {
-            db.collection("Menus").get()
-                .then(allMenus => {
-                    allMenus.forEach(doc => {
-                        var restaurantName = doc.data().description; //gets the name field
-                        var menuID = doc.data().restaurantid; //gets the unique ID field
-                        console.log(menuID);
-                        document.getElementById(menuID).innerText = restaurantName;
-                    })
-                })
-        }
-        displayMenus();
-
-
-        //populates the restaurant phone with corresponding code
-        function displayPhone() {
-            db.collection("Restaurants").get()
-                .then(allRestaurants => {
-                    allRestaurants.forEach(doc => {
-                        var restaurantPhone = doc.data().phone; //gets the phone field
-                        var restaurantID = doc.data().code; //gets the unique ID field
-                        console.log(restaurantID);
-                        document.getElementById(restaurantID).innerText = restaurantPhone;
-                    })
-                })
-        }
-        displayPhone();
-
+        var datevalidated = document.getElementById('datevalidated');
+        datevalidated.innerHTML = 
 
         ////////////////////////FOR FAVORITES/////////////////////////////////////
         function getFavorites(id) {
