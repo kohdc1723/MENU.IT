@@ -240,24 +240,6 @@
         }
         displayRestaurants();
 
-        // Creating Menus collection by getting restaurantname from Restaurants collection.
-        // function writeMenus() {
-        //     var menusRef = db.collection("Menus");
-        //     var restaurantnameRef = db.collection("Restaurants").get()
-        //         .then(allRestaurants => {
-        //             allRestaurants.forEach(doc => {
-        //                 var restaurantName = doc.data().restaurantname;
-        //                 menusRef.add({
-        //                     restaurantname: restaurantName,
-        //                     //location: "Vancouver",
-        //                     dateuploaded: "11112021",
-        //                     uploader: "Chan"
-        //                 });
-        //             })
-        //         })
-        // }
-        // writeMenus();
-
         function displayResto() {
             var restoCardTemplate = document.getElementById('restoCardTemplate');
             var restoCardGroup = document.getElementById('restoCardGroup');
@@ -266,7 +248,7 @@
                 .then(updatedRestos => {
                     updatedRestos.forEach(doc => {
                         var restoName = doc.data().restaurantname;
-
+                        console.log(restoName);
                         var testRestoCard = restoCardTemplate.content.cloneNode(true);
                         testRestoCard.querySelector('#restoName').innerHTML = restoName;
                         testRestoCard.querySelector('a').href = `./restmain.html?id=${doc.id}`;
@@ -288,6 +270,7 @@
                      })
                 })
                 .catch(() => {
+                    // doesn't work yet
                     alert('Cannot Find Restaurant');
                 })
         })
