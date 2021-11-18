@@ -46,7 +46,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search" style="position: sticky; top: 0">
+    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search" style=" top: 0">
         <div class="container"><a class="navbar-brand" href="index.html"
                 style="color: #ffa952;font-size: 25px;">Menu.It</a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-2"
@@ -77,9 +77,9 @@
                 <!--SEARCH BAR-->
                 <div class="col padMar" style="margin:8px 8px; padding:8px 18px">
                     <div class="input-group">
-                        <input class="form-control autocomplete" type="text" placeholder="Search..."
+                        <input class="form-control autocomplete" type="text" id="searchbox" placeholder="Search..."
                             style="height: 32px; border-color: #ffa952;">
-                        <button class="btn btn-warning" type="button"
+                        <button class="btn btn-warning" type="button" id="searchbutton"
                             style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
                             <i class="fa fa-search d-md-flex d-lg-flex align-items-md-center align-items-lg-center material-icons"
                                 style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
@@ -167,7 +167,22 @@
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
 
-        //
+        // Search Function
+        var searchbutton = document.getElementById('searchbutton');
+        searchbutton.addEventListener('click', () => {
+            var searchinput = document.getElementById('searchbox').value;
+            db.collection('Restaurants').where('restaurantname', '==', searchinput).get()
+                .then((result) => {
+                    result.forEach((doc) => {
+                         var restaurantid = doc.id;
+                         window.location.href = `./restmain.html?id=${restaurantid}`;
+                     })
+                })
+                .catch(() => {
+                    alert('Cannot Find Restaurant');
+                })
+        })
+
     </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 

@@ -80,9 +80,9 @@
         <div class="col-lg-6 m-auto">
             <!--SEARCH BAR-->
             <div class="input-group input-group-lg">
-                <input class="form-control autocomplete" type="text" placeholder="Search..."
+                <input class="form-control autocomplete" type="text" placeholder="Search..." id="searchbox"
                     style="height: 32px; border-color: #ffa952;">
-                <button class="btn btn-warning" type="button"
+                <button class="btn btn-warning" type="button" id="searchbutton"
                     style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
                     <i class="fa fa-search d-md-flex d-lg-flex align-items-md-center align-items-lg-center material-icons"
                         style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
@@ -275,6 +275,22 @@
                 })
         }
         displayResto();
+        
+        // Search Function
+        var searchbutton = document.getElementById('searchbutton');
+        searchbutton.addEventListener('click', () => {
+            var searchinput = document.getElementById('searchbox').value;
+            db.collection('Restaurants').where('restaurantname', '==', searchinput).get()
+                .then((result) => {
+                    result.forEach((doc) => {
+                         var restaurantid = doc.id;
+                         window.location.href = `./restmain.html?id=${restaurantid}`;
+                     })
+                })
+                .catch(() => {
+                    alert('Cannot Find Restaurant');
+                })
+        })
     </script>
 </body>
 

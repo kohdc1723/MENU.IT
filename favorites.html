@@ -60,9 +60,9 @@
               <!--SEARCH BAR-->
               <div class="col justify-content-end">
                 <div class="input-group">
-                  <input class="form-control autocomplete" type="text" placeholder="Search..."
+                  <input class="form-control autocomplete" id="searchbox" type="text" placeholder="Search..."
                     style="height: 32px; border-color: #ffa952;">
-                  <button class="btn btn-warning" type="button"
+                  <button class="btn btn-warning" type="button" id="searchbutton"
                     style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
                     <i class="material-icons"
                       style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
@@ -178,6 +178,21 @@
             });
         }
     
+        // Search Function
+        var searchbutton = document.getElementById('searchbutton');
+        searchbutton.addEventListener('click', () => {
+            var searchinput = document.getElementById('searchbox').value;
+            db.collection('Restaurants').where('restaurantname', '==', searchinput).get()
+                .then((result) => {
+                    result.forEach((doc) => {
+                         var restaurantid = doc.id;
+                         window.location.href = `./restmain.html?id=${restaurantid}`;
+                     })
+                })
+                .catch(() => {
+                    alert('Cannot Find Restaurant');
+                })
+        })
     </script>
 </body>
 
