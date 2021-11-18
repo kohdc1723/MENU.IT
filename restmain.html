@@ -285,26 +285,10 @@
 
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto; overflow: scroll; width: 400px; height: 400px; background-color: grey;">
-                    <div id="imagegallery" style="margin: 5px; width: auto; height: 150px; background-color: darkblue;">
-                      photo here
-                    </div>
-                    <div id="imagegallery" style="margin: 5px; width: auto; height: 150px; background-color: darkblue;">
-                        photo here
-                    </div>
-                      <div id="imagegallery" style="margin: 5px; width: auto; height: 150px; background-color: darkblue;">
-                        photo here
-                      </div>
-                      <div id="imagegallery" style="margin: 5px; width: auto; height: 150px; background-color: darkblue;">
-                        photo here
-                      </div>
-                      <div id="imagegallery" style="margin: 5px; width: auto; height: 150px; background-color: darkblue;">
-                        photo here
-                      </div>
-                      <div id="imagegallery" style="margin: 5px; width: auto; height: 150px; background-color: darkblue;">
-                        photo here
-                      </div>
-                    
+                <div id="galleryGroup" style="display: grid; grid-template-columns: auto-fill; grid-template-rows: 100%; overflow: scroll; width: 400px; height: 200px; background-color: grey;">
+                    <template id="galleryTemplate">
+                        <img src="" alt="" style="width: 180px; height: 180px; margin: 5px;">
+                    </template>
                 </div>
                     
  
@@ -371,6 +355,26 @@
                     alert('Cannot Find Restaurant');
                 })
         })
+
+        // Gallery Display // Still need orderBy('timestamp')
+        function displayGallery() {
+            var galleryTemplate = document.getElementById('galleryTemplate');
+            var galleryGroup = document.getElementById('galleryGroup');
+            var querystring = new URLSearchParams(window.location.search);
+            var restaurantid = querystring.get('id');
+            db.collection('Menus').where('restaurantid', '==', restaurantid).get()
+                .then(imageload => {
+                    imageload.forEach(doc => {
+                        var menuimage = doc.data().imageURL;
+                        console.log(menuimage);
+                        var testGallery = galleryTemplate.content.cloneNode(true);
+                        testGallery.querySelector('img').src = menuimage;
+                        //imageGallery.querySelector('a').href = `./restmain.html?id=${doc.id}`;
+                        galleryGroup.appendChild(testGallery);
+                    })
+                })
+        }
+        displayGallery();
 
     </script>
 
