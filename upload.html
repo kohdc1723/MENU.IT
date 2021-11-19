@@ -222,7 +222,6 @@
                                 db.collection('Menus').add({
                                     restaurantid: restaurantid,
                                     description: description,
-                                    // location: "BBY",
                                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                                     uploader: user.uid,
                                     imageURL: url
