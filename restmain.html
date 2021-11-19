@@ -183,9 +183,9 @@
                     <!--SEARCH BAR-->
                     <div class="col justify-content-end">
                         <div class="input-group">
-                            <input class="form-control autocomplete" type="text" placeholder="Search..."
+                            <input class="form-control autocomplete" id="searchbox" type="text" placeholder="Search..."
                                 style="height: 32px; border-color: #ffa952;">
-                            <button class="btn btn-warning" type="button"
+                            <button class="btn btn-warning" type="button" id="searchbutton"
                                 style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
                                 <i class="material-icons"
                                     style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
@@ -211,24 +211,19 @@
                         src="./images/menu1.jpg">
                     <div id="imgtext"></div>
                 </div>
-                <div class="row img-row">
-                    <div class="col column" style="padding: 0%; padding-left: 10px;"><img class="img-thumbnail img-fluid" src="./images/dummyimg.png"
-                            onclick="myFunction(this);" alt="image 1"></div>
-                    <div class="col column" style="padding: 0%;"><img class="img-thumbnail img-fluid" src="./images/dummyimg.png"
-                            onclick="myFunction(this);" alt="image 2"></div>
-                    <div class="col column" style="padding: 0%;"><img class="img-thumbnail img-fluid" src="./images/dummyimg.png"
-                            onclick="myFunction(this);" alt="image 3"></div>
-                    <div class="col column" style="padding: 0%; padding-right: 10px;"><img class="img-thumbnail img-fluid" src="./images/dummyimg.png"
-                            onclick="myFunction(this);" alt="image 4"></div>
+                <div id="galleryGroup" style="display: grid; grid-template-columns: auto; grid-template-rows: lfr; overflow: scroll; width: 400px; height: 200px; background-color: grey;">
+                    <template id="galleryTemplate">
+                        <img src="" alt="" style="width: 180px; height: 180px; margin: 5px;">
+                    </template>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-xl-4 offset-xl-0">
                 <h2 id="restoName"style="margin-top: 5px;"></h2>
                 <h5>Last Validated on: <span id="datevalidated" class="fw-bold">November 4, 2021</span></h5>
                 <div class="text-right" style="margin-top: 3%;">
-                    <button type="button" id="select" class="btn" onclick="" id="uploadimage"
+                    <button type="button" class="btn" onclick="" id="uploadimage"
                         style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Upload</button>
-                    <button type="button" id="upload" class="btn" onclick="" id="favorite" href="favorites.html"
+                    <button type="button" id="upload" class="btn" onclick="" id="favorite" href="./favorites.html"
                         style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Favorite</button>
                 </div>
                 <!--restaurant information-->
@@ -350,6 +345,5 @@
     <script src="/assets/js/Image-Tab-Gallery-Horizontal.js"></script>
     <script id="bs-live-reload" data-sseport="64275" data-lastchange="1636052765041" src="/js/livereload.js"></script>
 
-</body>
-
+</body>W
 </html>
