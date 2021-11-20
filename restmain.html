@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,6 +152,7 @@
         #galleryimage:focus {
             border: 2px white solid;
         }
+
         #galleryimage:hover {
             opacity: 0.5;
         }
@@ -214,18 +214,21 @@
     <div class="container-fluid top-container">
         <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
             <div class="col-12 col-md-6 col-xl-4 offset-xl-2">
-                <div class="img-container"><img class="rounded" id="myImg" style="width:100%; height:300px; object-fit: cover;"
-                        src="./images/menu2.jpg">
+                <div class="img-container"><img class="rounded" id="myImg"
+                        style="width:100%; height:300px; object-fit: cover;" src="">
                     <div id="imgtext"></div>
                 </div>
-                <div id="galleryGroup" style="display: flex; overflow: scroll; width: 100%; height: 40%; background-color: #ffa952;">
+                <div id="galleryGroup"
+                    style="display: flex; overflow: scroll; width: 100%; height: 40%; background-color: #ffa952;">
                     <template id="galleryTemplate">
-                        <img src="" id="galleryimage" alt="" style="padding-top: 10px; padding-left: 0; width: 50%; height: 90%; object-fit: cover; margin: 5px; cursor: pointer;" tabindex="0" onclick="switchimage(this)">
+                        <img src="" id="galleryimage" alt=""
+                            style="padding-top: 10px; padding-left: 0; width: 50%; height: 90%; object-fit: cover; margin: 5px; cursor: pointer;"
+                            tabindex="0" onclick="switchimage(this)">
                     </template>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-xl-4 offset-xl-0">
-                <h2 id="restoName"style="margin-top: 5px;"></h2>
+                <h2 id="restoName" style="margin-top: 5px;"></h2>
                 <h5>Last Validated on: <span id="datevalidated" class="fw-bold">November 4, 2021</span></h5>
                 <div class="text-right" style="margin-top: 3%;">
                     <button type="button" class="btn" onclick="" id="uploadimage"
@@ -236,11 +239,16 @@
                 <!--restaurant information-->
                 <div class="col-sm-4" style="width: 100%; height: 60%; margin-top: 5%;">
                     <h5 style="padding: 8px; margin-top: 5px;">Restaurant Information</h5>
-                    <div class="col-sm fs-4 pt-1" style="border: solid 3px #ffa952; border-radius: 10px; margin-bottom:3%">
-                        <div><i class="material-icons p-2" style="color: #ffa952;">call</i><span id="contact" style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952;">schedule</i><span id="hours" style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952;">sell</i><span id="price" style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952;">map</i><span id="location" style="font-size: 20px;"></span></div>
+                    <div class="col-sm fs-4 pt-1"
+                        style="border: solid 3px #ffa952; border-radius: 10px; margin-bottom:3%">
+                        <div><i class="material-icons p-2" style="color: #ffa952;">call</i><span id="contact"
+                                style="font-size: 20px;"></span></div>
+                        <div><i class="material-icons p-2" style="color: #ffa952;">schedule</i><span id="hours"
+                                style="font-size: 20px;"></span></div>
+                        <div><i class="material-icons p-2" style="color: #ffa952;">sell</i><span id="price"
+                                style="font-size: 20px;"></span></div>
+                        <div><i class="material-icons p-2" style="color: #ffa952;">map</i><span id="location"
+                                style="font-size: 20px;"></span></div>
                     </div>
                 </div>
             </div>
@@ -275,7 +283,7 @@
                     </div> -->
                     <div id="buttons"></div>
                 </div>
-            </div>        
+            </div>
         </div>
     </div>
 
@@ -332,23 +340,39 @@
                 })
         })
 
-        // Gallery Display // Still need orderBy('timestamp')
+        // Gallery Display
         function displayGallery() {
             var galleryTemplate = document.getElementById('galleryTemplate');
             var galleryGroup = document.getElementById('galleryGroup');
             var querystring = new URLSearchParams(window.location.search);
             var restaurantid = querystring.get('id');
-            db.collection('Menus').where('restaurantid', '==', restaurantid).get()
-                .then(imageload => {
-                    imageload.forEach(doc => {
-                        var menuimage = doc.data().imageURL;
-                        console.log(menuimage);
-                        var testGallery = galleryTemplate.content.cloneNode(true);
-                        testGallery.querySelector('img').src = menuimage;
-                        galleryGroup.appendChild(testGallery);
-
+            // declare array
+            var urlarray = new Array();
+            db.collection('Menus').where('restaurantid', '==', restaurantid).onSnapshot((imageload) => {
+                imageload.forEach((doc) => {
+                    // array control
+                    var i = 0;
+                    // reading imageURL from documents
+                    var menuimageurl = doc.data().imageURL;
+                    var menutime = doc.data().timestamp;
+                    // add url in the array => creates 2D array
+                    urlarray.push([menuimageurl, menutime]);
+                    // sort array by timestamp
+                    urlarray.sort(function(a, b) {
+                        return b[1].seconds - a[1].seconds;
                     })
+                    // increment control
+                    i++;
                 })
+                // populate images in order of timestamp
+                for (var i = 0; i < urlarray.length; i++) {
+                    var testGallery = galleryTemplate.content.cloneNode(true);
+                    testGallery.querySelector('img').src = urlarray[i][0];
+                    galleryGroup.appendChild(testGallery);
+                }
+                // show first image as default in a big image field
+                document.getElementById('myImg').src = urlarray[0][0];
+            })
         }
         displayGallery();
 
@@ -388,4 +412,5 @@
     <script id="bs-live-reload" data-sseport="64275" data-lastchange="1636052765041" src="/js/livereload.js"></script>
 
 </body>
+
 </html>
