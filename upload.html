@@ -111,6 +111,8 @@
                     </div>
                 </div>
             </div>
+
+            <!--UPLOAD MENU IMAGE2-->
             <div class="album py-5 bg-light p-2">
                 <div class="container" style="background-color: #ffa952">
                     <br>
@@ -132,6 +134,30 @@
                     </div>
                 </div>
             </div>
+
+            <!--UPLOAD MENU IMAGE3 AFTER CLICKED MORE-->
+            <div class="album py-5 bg-light p-2" id="oneMore" style="display:none">
+                <div class="container" style="background-color: #ffa952">
+                    <br>
+                    <h4>Upload 3</h4>
+                    <div class="container mt-3" style="margin-bottom: 5%">
+                        <input type="text" class="form-control mt-2" id="title2" placeholder="Title">
+                        <textarea class="form-control mt-2" id="description2" placeholder="Description"></textarea>
+                        <input class="form-control mt-2" type="file" id="menuimagefile2">
+                    </div>
+
+                    <!--Thumbnail of upload-->
+                    <div class="col-sm">
+                        <div class="col">
+                            <div class="text-center pb-5">
+                                <img id="menuimage2" src="images/dummyimg.png" alt="Placeholder"
+                                    class="img-thumbnail" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!--MORE MENU IMAGE and POST-->
@@ -139,9 +165,9 @@
             <div class="container text-center">
                 <div class="d-grid gap-2 col-6 mx-auto p-5">
                     <div class="text-right">
-                        <button type="button" id="select" class="btn" onclick=""
+                        <button type="button" id="select" class="btn" onclick="postMore()"
                             style="background: #ffe79a; color: #ffa952; margin-bottom: 5px;">More (+)</button>
-                        <button type="button" id="upload" class="btn" onclick=""
+                        <button type="button" id="upload" class="btn"
                             style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; padding-left: 27px; padding-right: 29px;">Post</button>
                     </div>
                 </div>
@@ -261,6 +287,20 @@
                     alert('Cannot Find Restaurant');
                 })
         })
+
+        //toggles MORE and LESS when wanting to upload more photos!
+        function postMore() {
+            var x = document.getElementById("oneMore");
+            if (x.style.display == "none") {
+                x.style.display = "block";
+                console.log("EXPANDS")
+                document.getElementById("select").innerHTML = "Less (-)";
+            } else {
+                x.style.display = "none";
+                document.getElementById("select").innerHTML = "More (+)";
+                console.log("COLLAPSES")
+            }
+        }
     </script>
 </body>
 
