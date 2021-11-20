@@ -190,7 +190,7 @@
         // Upload Function
         // Save image in fire storage
         // Create document in Menus Collection including image url
-
+        // Only logged-in users can upload
         var upload = document.getElementById('upload');
         upload.addEventListener('click', function () {
             firebase.auth().onAuthStateChanged(function (user) {
