@@ -346,16 +346,16 @@
             var galleryGroup = document.getElementById('galleryGroup');
             var querystring = new URLSearchParams(window.location.search);
             var restaurantid = querystring.get('id');
-            // declare array
+            // declare array for timestamp sorting
             var urlarray = new Array();
             db.collection('Menus').where('restaurantid', '==', restaurantid).onSnapshot((imageload) => {
                 imageload.forEach((doc) => {
                     // array control
                     var i = 0;
-                    // reading imageURL from documents
+                    // reading imageURL and timestamp from documents
                     var menuimageurl = doc.data().imageURL;
                     var menutime = doc.data().timestamp;
-                    // add url in the array => creates 2D array
+                    // add url and timestamp in the array => creates 2D array
                     urlarray.push([menuimageurl, menutime]);
                     // sort array by timestamp
                     urlarray.sort(function(a, b) {
