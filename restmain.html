@@ -52,7 +52,7 @@
             /* Hidden by default */
             /*position: fixed;*/
             /* Stay in place */
-            z-index: 1;
+            z-index: 2;
             /* Sit on top */
             padding-top: 100px;
             /* Location of the box */
@@ -64,7 +64,7 @@
             /* Full height */
             overflow: auto;
             /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.884);
             /* Fallback color */
             background-color: rgba(0, 0, 0, 0.9);
             /* Black w/ opacity */
@@ -73,6 +73,7 @@
         /* Modal Content (image) */
         .modal-content {
             margin: auto;
+            margin-top: 7%;
             display: block;
             width: 80%;
             max-width: 700px;
@@ -215,11 +216,11 @@
         <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
             <div class="col-12 col-md-6 col-xl-4 offset-xl-2">
                 <div class="img-container"><img class="rounded" id="myImg"
-                        style="width:100%; height:300px; object-fit: cover;" src="">
+                        style="width:100%; height:300px; object-fit: fill;" src="">
                     <div id="imgtext"></div>
                 </div>
                 <div id="galleryGroup"
-                    style="display: flex; overflow: scroll; width: 100%; height: 40%; background-color: #ffa952;">
+                    style="display: flex; overflow: scroll; width: 100%; height: 40%; background-color: #ffa952; padding-top: 3%;">
                     <template id="galleryTemplate">
                         <img src="" id="galleryimage" alt=""
                             style="padding-top: 10px; padding-left: 0; width: 50%; height: 90%; object-fit: cover; margin: 5px; cursor: pointer;"
@@ -235,23 +236,22 @@
                         style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Upload</button>
                     <button type="button" id="upload" class="btn" onclick="" id="favorite" href="./favorites.html"
                         style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Favorite</button>
-
                     <a><button type="button" id="validate" class="btn btn-sm validate_btn" onclick="updateValidate()"
-                            style="background: #ffe79a; color: #ffa952; margin-bottom: 5px;">Validate</button></a>
+                            style="background: #ffe79a; color: #ffa952; margin-bottom: 5px; margin-right: 5px; font-size: 14px; padding: 6px 12px">Validate</button></a>
                     <span>Count: <span id="showcount">0</span></span>
                 </div>
                 <!--restaurant information-->
                 <div class="col-sm-4" style="width: 100%; height: 60%; margin-top: 5%;">
                     <h5 style="padding: 8px; margin-top: 5px;">Restaurant Information</h5>
                     <div class="col-sm fs-4 pt-1"
-                        style="border: solid 3px #ffa952; border-radius: 10px; margin-bottom:3%">
-                        <div><i class="material-icons p-2" style="color: #ffa952;">call</i><span id="contact"
+                        style="border: solid 3px #ffa952; border-radius: 10px; margin-bottom:3%; padding-left: 3%;">
+                        <div><i class="material-icons p-2" style="color: #ffa952; margin-top: 3%;">call</i><span id="contact"
                                 style="font-size: 20px;"></span></div>
                         <div><i class="material-icons p-2" style="color: #ffa952;">schedule</i><span id="hours"
                                 style="font-size: 20px;"></span></div>
                         <div><i class="material-icons p-2" style="color: #ffa952;">sell</i><span id="price"
                                 style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952;">map</i><span id="location"
+                        <div><i class="material-icons p-2" style="color: #ffa952; margin-bottom: 5%;">map</i><span id="location"
                                 style="font-size: 20px;"></span></div>
                     </div>
                 </div>
@@ -343,16 +343,16 @@
             var galleryGroup = document.getElementById('galleryGroup');
             var querystring = new URLSearchParams(window.location.search);
             var restaurantid = querystring.get('id');
-            // declare array
+            // declare array for timestamp sorting
             var urlarray = new Array();
             db.collection('Menus').where('restaurantid', '==', restaurantid).onSnapshot((imageload) => {
                 imageload.forEach((doc) => {
                     // array control
                     var i = 0;
-                    // reading imageURL from documents
+                    // reading imageURL and timestamp from documents
                     var menuimageurl = doc.data().imageURL;
                     var menutime = doc.data().timestamp;
-                    // add url in the array => creates 2D array
+                    // add url and timestamp in the array => creates 2D array
                     urlarray.push([menuimageurl, menutime]);
                     // sort array by timestamp
                     urlarray.sort(function (a, b) {
