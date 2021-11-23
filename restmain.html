@@ -427,7 +427,6 @@
 
                     //if the mainimgsrc is in the query, then say it matches!
                     if (mainImgSrc == query) {
-                        console.log("found one!");
                         var URLindocumentID = doc.id;
 
                         console.log(URLindocumentID); //provides the document ID with the URL field
@@ -465,7 +464,7 @@
 
         //changes the color
         function clickedValidate() {
-            // //disables it after ONE click - but issue because disables it for all the other images
+            // //disables it after ONE click
             document.getElementById("validate").disabled = true;
 
             //changed background color and text color
@@ -473,14 +472,15 @@
             document.getElementById("validate").style.color = 'white';
             //text changes to "Validated"
             document.getElementById("validate").innerHTML = "Validated";
-
-            document.getElementById("validate").disabled = false;
         }
     </script>
 
     <!--shows date of last validated when clicked on/page is loaded!!-->
     <script>
         function showDate() {
+            //enables the Validate button after user clicks a new image
+            document.getElementById("validate").disabled = false;
+
             let mainImg = document.getElementById("myImg").getAttribute("src");
             //finds the mainIMG src
             // console.log(mainImg);
@@ -494,8 +494,6 @@
 
                     //if the mainimg url is the same as query
                     if (mainImg == query1) {
-                        console.log("found one!");
-
                         var specificImgID = doc.id;
 
                         //gets the document ID of the image
@@ -503,21 +501,27 @@
 
                         var showTimeStamp = db.collection("Menus").doc(specificImgID);
 
+                        //ask!
+                        // db.collection("Menus").doc(specificImgID).get().then((doc) => {
+                        //     var theTime = doc.data().timestamp;
+                        //     document.getElementById("datevalidated").innerHTML = theTime.toDate();
+                        // })
+
                         showTimeStamp
                             .onSnapshot(doc => {
                                 //gets timestamp of the specific documentID
                                 var theTime = doc.data().timestamp;
-                                console.log(theTime.toDate());
+                                console.log(theTime.toDate()); //shows timestamp
                                 // const validatedDate = theTime.toDate().toDateString(); //if ONLY WANT THE DATE
 
                                 document.getElementById("datevalidated").innerHTML = theTime.toDate();
                             })
+                        
                     }
 
                 })
             })
         }
-        showDate();
     </script>
 
     <script src="/assets/js/Image-Tab-Gallery-Horizontal.js"></script>
