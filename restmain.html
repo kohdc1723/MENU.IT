@@ -223,7 +223,7 @@
                     <template id="galleryTemplate">
                         <img src="" id="galleryimage" alt=""
                             style="padding-top: 10px; padding-left: 0; width: 50%; height: 90%; object-fit: cover; margin: 5px; cursor: pointer;"
-                            tabindex="0" onclick="switchimage(this)">
+                            tabindex="0" onclick="switchimage(this); showDate();">
                     </template>
                 </div>
             </div>
@@ -237,8 +237,8 @@
                         style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Favorite</button>
 
                     <a><button type="button" id="validate" class="btn btn-sm validate_btn" onclick="updateValidate()"
-                        style="background: #ffe79a; color: #ffa952; margin-bottom: 5px;">Validate</button></a>
-                    <span>Count: <span id = "showcount">0</span></span>
+                            style="background: #ffe79a; color: #ffa952; margin-bottom: 5px;">Validate</button></a>
+                    <span>Count: <span id="showcount">0</span></span>
                 </div>
                 <!--restaurant information-->
                 <div class="col-sm-4" style="width: 100%; height: 60%; margin-top: 5%;">
@@ -418,7 +418,7 @@
         function incrementValidate() {
             //gets the main image's src data
             let mainImgSrc = document.getElementById("myImg").getAttribute("src");
-            console.log(mainImgSrc);
+            // console.log(mainImgSrc);
 
             db.collection("Menus").get().then((snapshot) => {
                 snapshot.forEach(doc => {
@@ -453,10 +453,10 @@
                             })
 
                         updateTimeStamp
-                        .onSnapshot(doc => {
-                            // console.log(doc.data().validatecount);
-                            document.getElementById("showcount").innerHTML = doc.data().validatecount;
-                        })
+                            .onSnapshot(doc => {
+                                // console.log(doc.data().validatecount);
+                                document.getElementById("showcount").innerHTML = doc.data().validatecount;
+                            })
                     }
                 })
 
@@ -465,24 +465,61 @@
 
         //changes the color
         function clickedValidate() {
+            // //disables it after ONE click - but issue because disables it for all the other images
+            document.getElementById("validate").disabled = true;
+
             //changed background color and text color
             document.querySelector('#validate').style.backgroundColor = '#ef5a5a';
             document.getElementById("validate").style.color = 'white';
             //text changes to "Validated"
             document.getElementById("validate").innerHTML = "Validated";
+
+            document.getElementById("validate").disabled = false;
         }
     </script>
 
+    <!--shows date of last validated when clicked on/page is loaded!!-->
     <script>
-        function showValidDate(){
-            var querystring = new URLSearchParams(window.location.search);
+        function showDate() {
+            let mainImg = document.getElementById("myImg").getAttribute("src");
+            //finds the mainIMG src
+            // console.log(mainImg);
 
-            db.collection('Menus').where('restaurantid', '==', restaurantid).onSnapshot((imageload) => {
-                imageload.forEach((doc) => {
+            db.collection("Menus").get().then((snapshot) => {
+                snapshot.forEach(doc => {
 
+                    //gets all of the imageURLS in each document ID in the menu collection
+                    var query1 = doc.data().imageURL;
+                    // console.log(query1);
 
+                    //if the mainimg url is the same as query
+                    if (mainImg == query1) {
+                        console.log("found one!");
+
+                        var specificImgID = doc.id;
+
+                        //gets the document ID of the image
+                        console.log(specificImgID);
+
+                        var showTimeStamp = db.collection("Menus").doc(specificImgID);
+
+                        showTimeStamp
+                            .onSnapshot(doc => {
+                                //gets timestamp of the specific documentID
+                                var theTime = doc.data().timestamp;
+                                console.log(theTime.toDate());
+                                // const validatedDate = theTime.toDate().toDateString(); //if ONLY WANT THE DATE
+
+                                document.getElementById("datevalidated").innerHTML = theTime.toDate();
+                            })
+                    }
+
+                })
+            })
         }
+        showDate();
     </script>
+
     <script src="/assets/js/Image-Tab-Gallery-Horizontal.js"></script>
     <script id="bs-live-reload" data-sseport="64275" data-lastchange="1636052765041" src="/js/livereload.js"></script>
 
