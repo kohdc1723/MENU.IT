@@ -35,138 +35,15 @@
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-    <style>
-        /* --------------------- The modal stylesheet ---------------------- */
-        #myImg {
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #myImg:hover {
-            opacity: 0.7;
-        }
-
-        .modal {
-            display: none;
-            /* Hidden by default */
-            /*position: fixed;*/
-            /* Stay in place */
-            z-index: 2;
-            /* Sit on top */
-            padding-top: 100px;
-            /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgba(0, 0, 0, 0.884);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.9);
-            /* Black w/ opacity */
-        }
-
-        /* Modal Content (image) */
-        .modal-content {
-            margin: auto;
-            margin-top: 7%;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        /* Caption of Modal Image */
-        #caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            height: 150px;
-        }
-
-        /* Add Animation */
-        .modal-content,
-        #caption {
-            -webkit-animation-name: zoom;
-            -webkit-animation-duration: 0.6s;
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-
-        @-webkit-keyframes zoom {
-            from {
-                -webkit-transform: scale(0)
-            }
-
-            to {
-                -webkit-transform: scale(1)
-            }
-        }
-
-        @keyframes zoom {
-            from {
-                transform: scale(0)
-            }
-
-            to {
-                transform: scale(1)
-            }
-        }
-
-        /* The Close Button */
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* 100% Image Width on Smaller Screens */
-        @media only screen and (max-width: 700px) {
-            .modal-content {
-                width: 100%;
-            }
-        }
-
-        button {
-            border: none;
-        }
-
-        /* ----------------- clickable gallery style ----------------------- */
-        #galleryimage:focus {
-            border: 2px white solid;
-        }
-
-        #galleryimage:hover {
-            opacity: 0.5;
-        }
-    </style>
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/restmain.css">
 
 </head>
 
-<body style="border-style: none;border-color: var(--bs-yellow);">
+<body>
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="main.html"
-                style="color: #ffa952;font-size: 25px;">Menu.It</a><button data-bs-toggle="collapse"
-                class="navbar-toggler" data-bs-target="#navcol-2"
-                style="background: #ffa952;color: var(--bs-white);"><span class="visually-hidden">Toggle
+        <div class="container"><a class="navbar-brand" href="main.html">Menu.It</a><button data-bs-toggle="collapse"
+                class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg"
                         width="1em" height="1em" viewBox="0 0 24 24" fill="none">
                         <path
@@ -187,73 +64,60 @@
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
 
-                <div class="col padMar" style="margin:8px 8px; padding:8px 18px">
+                <div class="col padMar">
                     <!--SEARCH BAR-->
                     <div class="col justify-content-end">
                         <div class="input-group">
-                            <input class="form-control autocomplete" id="searchbox" type="text" placeholder="Search..."
-                                style="height: 32px; border-color: #ffa952;">
-                            <button class="btn btn-warning" type="button" id="searchbutton"
-                                style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
-                                <i class="material-icons"
-                                    style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
+                            <input class="form-control autocomplete" id="searchbox" type="text" placeholder="Search...">
+                            <button class="btn btn-warning" type="button" id="searchbutton">
+                                <i class="material-icons">search</i></button>
                         </div>
                     </div>
                 </div>
 
-                <!--UPLOAD and PROFILE-->
+                <!--PROFILE-->
+                <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button" id="signout"
+                    style="height: 32px; margin:8px 8px; margin-left: 0; padding: 8px 18px; color: #ffa952 !important; background: #ffe79a; font-size: 13px; width: 90px; align-items: center">Sign
+                    Out</a>
                 <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
-                    role="button" href="profile.html" id="profile-name"
-                    style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;"></a>
-                <!-- <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
-                    href="upload.html"
-                    style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952; font-size: 14px; width: 80px; align-items: center">Upload</a> -->
+                    role="button" id="profile-name"
+                    style="height: 32px; margin:8px 8px; margin-left: 0; padding: 8px 18px; background: #ffa952; font-size: 13px; width: 90px;"></a>
             </div>
         </div>
     </nav>
 
     <div class="container-fluid top-container">
-        <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
+        <div class="row">
             <div class="col-12 col-md-6 col-xl-4 offset-xl-2">
-                <div class="img-container"><img class="rounded" id="myImg"
-                        style="width:100%; height:300px; object-fit: fill;" src="">
-                    <div id="imgtext"></div>
+                <h2 id="restoName"></h2>
+                <h5>Last Validated on: <span id="datevalidated" class="fw-bold showdate">November 4, 2021</span></h5>
+                <!-- <span>Count: <span id="showcount">0</span></span> -->
+                <div class="text-right">
+                    <p>Is menu validated? <a><button type="button" id="validate" class="btn btn-sm validate_btn"
+                                onclick="updateValidate()">Validate</button></a>
+                        If not, <button type="button" class="btn" onclick="" id="uploadimage">Upload</button>
+                    </p>
                 </div>
-                <div id="galleryGroup"
-                    style="display: flex; overflow: scroll; width: 100%; height: 40%; background-color: #ffa952; padding-top: 3%;">
-                    <template id="galleryTemplate">
-                        <img src="" id="galleryimage" alt=""
-                            style="width: 48%; height: 90%; object-fit: fill; margin: 5px; cursor: pointer;"
-                            tabindex="0" onclick="switchimage(this)">
-                    </template>
+                <!--restaurant information-->
+                <div class="col-sm-4">
+                    <h5>Restaurant Information</h5>
+                    <div class="col-sm fs-4 pt-1">
+                        <div><i class="material-icons p-2">call</i><span id="contact"></span></div>
+                        <div><i class="material-icons p-2">schedule</i><span id="hours"></span>
+                        </div>
+                        <div><i class="material-icons p-2">sell</i><span id="price"></span></div>
+                        <div><i class="material-icons p-2">map</i><span id="location"></span></div>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-xl-4 offset-xl-0">
-                <h2 id="restoName" style="margin-top: 5px;"></h2>
-                <h5>Last Validated on: <span id="datevalidated" class="fw-bold showdate">November 4, 2021</span></h5>
-                <div class="text-right" style="margin-top: 3%;">
-                    <button type="button" class="btn" onclick="" id="uploadimage"
-                        style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Upload</button>
-                    <button type="button" id="upload" class="btn" onclick="" id="favorite" href="./favorites.html"
-                        style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Favorite</button>
-                    <a><button type="button" id="validate" class="btn btn-sm validate_btn" onclick="updateValidate()"
-                            style="background: #ffe79a; color: #ffa952; margin-bottom: 5px; margin-right: 5px; font-size: 14px; padding: 6px 12px">Validate</button></a>
-                    <span>Count: <span id="showcount">0</span></span>
+                <div class="img-container"><img class="rounded" id="myImg" src="">
+                    <div id="imgtext"></div>
                 </div>
-                <!--restaurant information-->
-                <div class="col-sm-4" style="width: 100%; height: 60%; margin-top: 5%;">
-                    <h5 style="padding: 8px; margin-top: 5px;">Restaurant Information</h5>
-                    <div class="col-sm fs-4 pt-1"
-                        style="border: solid 3px #ffa952; border-radius: 10px; margin-bottom:3%; padding-left: 3%;">
-                        <div><i class="material-icons p-2" style="color: #ffa952; margin-top: 3%;">call</i><span id="contact"
-                                style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952;">schedule</i><span id="hours"
-                                style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952;">sell</i><span id="price"
-                                style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952; margin-bottom: 5%;">map</i><span id="location"
-                                style="font-size: 20px;"></span></div>
-                    </div>
+                <div id="galleryGroup">
+                    <template id="galleryTemplate">
+                        <img src="" id="galleryimage" alt="" tabindex="0" onclick="switchimage(this)">
+                    </template>
                 </div>
             </div>
 
@@ -291,12 +155,12 @@
         </div>
     </div>
 
-    <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
+    <footer class="footer-basic">
         <ul class="list-inline">
-            <li class="list-inline-item" style="font-size: 14px;"><a href="#">Home</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
+            <li class="list-inline-item"><a href="./main.html">Home</a></li>
+            <li class="list-inline-item"><a href="#">Features</a></li>
+            <li class="list-inline-item"><a href="#">FAQs</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
             <li class="list-inline-item"></li>
         </ul>
         <p class="copyright">Menu.It © 2021</p>
@@ -452,11 +316,11 @@
                                 document.getElementById("datevalidated").innerHTML = theTime.toDate();
                             })
 
-                        updateTimeStamp
-                            .onSnapshot(doc => {
-                                // console.log(doc.data().validatecount);
-                                document.getElementById("showcount").innerHTML = doc.data().validatecount;
-                            })
+                        // updateTimeStamp
+                        //     .onSnapshot(doc => {
+                        //         // console.log(doc.data().validatecount);
+                        //         document.getElementById("showcount").innerHTML = doc.data().validatecount;
+                        //     })
                     }
                 })
 
@@ -473,16 +337,6 @@
         }
     </script>
 
-    <script>
-        function showValidDate() {
-            var querystring = new URLSearchParams(window.location.search);
-
-            db.collection('Menus').where('restaurantid', '==', restaurantid).onSnapshot((imageload) => {
-                imageload.forEach((doc) => {
-
-
-                }
-    </script>
     <script src="/assets/js/Image-Tab-Gallery-Horizontal.js"></script>
     <script id="bs-live-reload" data-sseport="64275" data-lastchange="1636052765041" src="/js/livereload.js"></script>
 
