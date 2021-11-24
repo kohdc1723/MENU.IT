@@ -34,12 +34,16 @@
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/my_style.css">
 </head>
 
 <body style="border-style: none;border-color: var(--bs-yellow);">
-    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search" style="position: sticky; top: 0">
+    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search"
+        style="position: sticky; top: 0; z-index: 3;">
         <div class="container"><a class="navbar-brand" href="main.html"
-                style="color: #ffa952;font-size: 25px;">Menu.It</a><button data-bs-toggle="collapse"
+                style="color: #ffa952;font-size: 25px;">Menu.it</a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-2"
                 style="background: #ffa952;color: var(--bs-white);"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg"
@@ -66,9 +70,7 @@
                 </form>
                 <div class="col padMar" style="margin-right: 5px;">
                 </div>
-                <!-- <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
-                    role="button" href="upload.html"
-                    style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px;width: 80px;">Upload</a> -->
+                <!--PROFILE-->
                 <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
                     role="button" id="profile-name"
                     style="height: 32px; margin:8px 8px; padding: 8px 18px;background: #ffa952;font-size: 14px;width: 80px;"></a>
@@ -130,7 +132,7 @@
 
     <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
         <ul class="list-inline">
-            <li class="list-inline-item" style="font-size: 14px;"><a href="#">Home</a></li>
+            <li class="list-inline-item" style="font-size: 14px;"><a href="./main.html">Home</a></li>
             <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
             <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
             <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
@@ -254,7 +256,7 @@
                 })
         }
         displayResto();
-        
+
         // Search Function
         var searchbutton = document.getElementById('searchbutton');
         searchbutton.addEventListener('click', () => {
@@ -262,9 +264,9 @@
             db.collection('Restaurants').where('restaurantname', '==', searchinput).get()
                 .then((result) => {
                     result.forEach((doc) => {
-                         var restaurantid = doc.id;
-                         window.location.href = `./restmain.html?id=${restaurantid}`;
-                     })
+                        var restaurantid = doc.id;
+                        window.location.href = `./restmain.html?id=${restaurantid}`;
+                    })
                 })
                 .catch(() => {
                     // doesn't work yet
