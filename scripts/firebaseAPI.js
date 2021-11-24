@@ -21,6 +21,13 @@ const firebaseConfig = {
         profilename.addEventListener('click', ()=> {
           window.location.href = "./profile.html";
         })
+
+        var signout = document.getElementById('sign-out');
+        signout.innerHTML = 'sign out';
+        signout.addEventListener('click', ()=> {
+          firebase.auth().signOut();
+          window.location.href = "./main.html";
+        })
         
     } else {
         // No user is signed in.
@@ -29,5 +36,13 @@ const firebaseConfig = {
         profilename.addEventListener('click', ()=> {
           window.location.href = "./login.html";
         })
+
+        var signout = document.getElementById('sign-out');
+        signout.style.visibility = 'hidden';
+        // signout.innerHTML = user.displayName;
+        // signout.addEventListener('click', ()=> {
+        //   firebase.auth().signOut();
+        //   window.location.href = "./main.html";
+        // })
     }
 })

@@ -52,7 +52,7 @@
             /* Hidden by default */
             /*position: fixed;*/
             /* Stay in place */
-            z-index: 1;
+            z-index: 2;
             /* Sit on top */
             padding-top: 100px;
             /* Location of the box */
@@ -64,7 +64,7 @@
             /* Full height */
             overflow: auto;
             /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.884);
             /* Fallback color */
             background-color: rgba(0, 0, 0, 0.9);
             /* Black w/ opacity */
@@ -73,6 +73,7 @@
         /* Modal Content (image) */
         .modal-content {
             margin: auto;
+            margin-top: 7%;
             display: block;
             width: 80%;
             max-width: 700px;
@@ -202,7 +203,10 @@
 
                 <!--UPLOAD and PROFILE-->
                 <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
-                    role="button" href="profile.html" id="profile-name"
+                    role="button" id="profile-name"
+                    style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;"></a>
+                <a class="btn btn-light d-md-flex d-lg-flex justify-content-lg-center align-items-lg-center action-button"
+                    role="button" id="sign-out"
                     style="height: 32px;margin-left: 0px;background: #ffa952;font-size: 14px;width: 80px;"></a>
                 <!-- <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
                     href="upload.html"
@@ -215,15 +219,15 @@
         <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
             <div class="col-12 col-md-6 col-xl-4 offset-xl-2">
                 <div class="img-container"><img class="rounded" id="myImg"
-                        style="width:100%; height:300px; object-fit: cover;" src="">
+                        style="width:100%; height:300px; object-fit: fill;" src="">
                     <div id="imgtext"></div>
                 </div>
                 <div id="galleryGroup"
-                    style="display: flex; overflow: scroll; width: 100%; height: 40%; background-color: #ffa952;">
+                    style="display: flex; overflow: scroll; width: 100%; height: 40%; background-color: #ffa952; padding-top: 3%;">
                     <template id="galleryTemplate">
                         <img src="" id="galleryimage" alt=""
                             style="padding-top: 10px; padding-left: 0; width: 50%; height: 90%; object-fit: cover; margin: 5px; cursor: pointer;"
-                            tabindex="0" onclick="switchimage(this)">
+                            tabindex="0" onclick="switchimage(this);">
                     </template>
                 </div>
             </div>
@@ -235,23 +239,22 @@
                         style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Upload</button>
                     <button type="button" id="upload" class="btn" onclick="" id="favorite" href="./favorites.html"
                         style="background: #ffa952; color: var(--bs-white); margin-bottom: 5px; font-size: 14px;">Favorite</button>
-
                     <a><button type="button" id="validate" class="btn btn-sm validate_btn" onclick="updateValidate()"
-                        style="background: #ffe79a; color: #ffa952; margin-bottom: 5px;">Validate</button></a>
-                    <span>Count: <span id = "showcount">0</span></span>
+                            style="background: #ffe79a; color: #ffa952; margin-bottom: 5px; margin-right: 5px; font-size: 14px; padding: 6px 12px">Validate</button></a>
+                    <span>Count: <span id="showcount">0</span></span>
                 </div>
                 <!--restaurant information-->
                 <div class="col-sm-4" style="width: 100%; height: 60%; margin-top: 5%;">
                     <h5 style="padding: 8px; margin-top: 5px;">Restaurant Information</h5>
                     <div class="col-sm fs-4 pt-1"
-                        style="border: solid 3px #ffa952; border-radius: 10px; margin-bottom:3%">
-                        <div><i class="material-icons p-2" style="color: #ffa952;">call</i><span id="contact"
+                        style="border: solid 3px #ffa952; border-radius: 10px; margin-bottom:3%; padding-left: 3%;">
+                        <div><i class="material-icons p-2" style="color: #ffa952; margin-top: 3%;">call</i><span id="contact"
                                 style="font-size: 20px;"></span></div>
                         <div><i class="material-icons p-2" style="color: #ffa952;">schedule</i><span id="hours"
                                 style="font-size: 20px;"></span></div>
                         <div><i class="material-icons p-2" style="color: #ffa952;">sell</i><span id="price"
                                 style="font-size: 20px;"></span></div>
-                        <div><i class="material-icons p-2" style="color: #ffa952;">map</i><span id="location"
+                        <div><i class="material-icons p-2" style="color: #ffa952; margin-bottom: 5%;">map</i><span id="location"
                                 style="font-size: 20px;"></span></div>
                     </div>
                 </div>
@@ -369,16 +372,30 @@
                 }
                 // show first image as default in a big image field
                 document.getElementById('myImg').src = urlarray[0][0];
+                console.log(urlarray[0][0]);
+                // validate show
+                console.log(urlarray);
+                document.getElementById('datevalidated').innerHTML = urlarray[0][1].toDate();
             })
         }
         displayGallery();
 
+
+
         // Clickable Gallery
         function switchimage(img) {
-            document.getElementById('myImg').src = img.src;
+            var imgurl = img.src;
+            var imgtimestamp;
+            document.getElementById('myImg').src = imgurl;
+            db.collection('Menus').where('imageURL', '==', imgurl).onSnapshot((snapshot)=> {
+                snapshot.forEach((doc)=> {
+                    imgtimestamp = doc.data().timestamp;
+                    document.getElementById('datevalidated').innerHTML = imgtimestamp.toDate();
+                })
+            })
         }
-
     </script>
+
     <script>
         // Get the modal
         var modal = document.getElementById("myModal");
@@ -406,7 +423,6 @@
 
     </script>
 
-    <!--validate button functions!-->
     <script>
         //calls 2 other functions when validate is clicked
         function updateValidate() {
@@ -418,7 +434,7 @@
         function incrementValidate() {
             //gets the main image's src data
             let mainImgSrc = document.getElementById("myImg").getAttribute("src");
-            console.log(mainImgSrc);
+            // console.log(mainImgSrc);
 
             db.collection("Menus").get().then((snapshot) => {
                 snapshot.forEach(doc => {
@@ -427,7 +443,6 @@
 
                     //if the mainimgsrc is in the query, then say it matches!
                     if (mainImgSrc == query) {
-                        console.log("found one!");
                         var URLindocumentID = doc.id;
 
                         console.log(URLindocumentID); //provides the document ID with the URL field
@@ -453,10 +468,10 @@
                             })
 
                         updateTimeStamp
-                        .onSnapshot(doc => {
-                            // console.log(doc.data().validatecount);
-                            document.getElementById("showcount").innerHTML = doc.data().validatecount;
-                        })
+                            .onSnapshot(doc => {
+                                // console.log(doc.data().validatecount);
+                                document.getElementById("showcount").innerHTML = doc.data().validatecount;
+                            })
                     }
                 })
 
@@ -465,6 +480,9 @@
 
         //changes the color
         function clickedValidate() {
+            // //disables it after ONE click
+            document.getElementById("validate").disabled = true;
+
             //changed background color and text color
             document.querySelector('#validate').style.backgroundColor = '#ef5a5a';
             document.getElementById("validate").style.color = 'white';
