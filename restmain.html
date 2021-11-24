@@ -165,6 +165,9 @@
         </ul>
         <p class="copyright">Menu.It © 2021</p>
     </footer>
+    <script>
+        showDate();
+    </script>
 
     <script>
         // Change restautant information and restaurant name using querystring data
@@ -282,7 +285,7 @@
         function incrementValidate() {
             //gets the main image's src data
             let mainImgSrc = document.getElementById("myImg").getAttribute("src");
-            console.log(mainImgSrc);
+            // console.log(mainImgSrc);
 
             db.collection("Menus").get().then((snapshot) => {
                 snapshot.forEach(doc => {
@@ -291,7 +294,6 @@
 
                     //if the mainimgsrc is in the query, then say it matches!
                     if (mainImgSrc == query) {
-                        console.log("found one!");
                         var URLindocumentID = doc.id;
 
                         console.log(URLindocumentID); //provides the document ID with the URL field
@@ -329,6 +331,9 @@
 
         //changes the color
         function clickedValidate() {
+            // //disables it after ONE click
+            document.getElementById("validate").disabled = true;
+
             //changed background color and text color
             document.querySelector('#validate').style.backgroundColor = '#ef5a5a';
             document.getElementById("validate").style.color = 'white';
