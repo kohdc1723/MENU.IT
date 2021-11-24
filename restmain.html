@@ -301,6 +301,9 @@
         </ul>
         <p class="copyright">Menu.It © 2021</p>
     </footer>
+    <script>
+        showDate();
+    </script>
 
     <script>
         // Change restautant information and restaurant name using querystring data
@@ -515,6 +518,7 @@
                                 // const validatedDate = theTime.toDate().toDateString(); //if ONLY WANT THE DATE
 
                                 document.getElementById("datevalidated").innerHTML = theTime.toDate();
+                                document.getElementById("showcount").innerHTML = doc.data().validatecount;
                             })
                         
                     }
@@ -522,6 +526,8 @@
                 })
             })
         }
+
+
     </script>
 
     <script src="/assets/js/Image-Tab-Gallery-Horizontal.js"></script>
