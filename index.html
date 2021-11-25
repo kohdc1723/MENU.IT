@@ -130,24 +130,9 @@
         <p class="copyright">Menu.it © 2021</p>
     </footer>
 
-    <script>
-        // Search Function
-        var searchbutton = document.getElementById('searchbutton');
-        searchbutton.addEventListener('click', () => {
-            var searchinput = document.getElementById('searchbox').value;
-            db.collection('Restaurants').where('restaurantname', '==', searchinput).get()
-                .then((result) => {
-                    result.forEach((doc) => {
-                        var restaurantid = doc.id;
-                        window.location.href = `./restmain.html?id=${restaurantid}`;
-                    })
-                })
-                .catch(() => {
-                    alert('Cannot Find Restaurant');
-                })
-        })
-    </script>
-
+    <!-- index.html JS file -->
+    <script src="./scripts/index.js"></script>
+    
 </body>
 
 </html>

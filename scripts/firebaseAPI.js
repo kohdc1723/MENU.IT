@@ -39,10 +39,6 @@ const firebaseConfig = {
 
         var signout = document.getElementById('sign-out');
         signout.style.visibility = 'hidden';
-        // signout.innerHTML = user.displayName;
-        // signout.addEventListener('click', ()=> {
-        //   firebase.auth().signOut();
-        //   window.location.href = "./main.html";
-        // })
+        
     }
 })
