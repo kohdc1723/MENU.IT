@@ -42,7 +42,8 @@ body {
 #sign-out {
     height: 32px;
     margin-left: 0px;
-    background: #ffa952;
+    background: #ffe79a;
+    color: #ffa952 !important;
     font-size: 13px;
     width: 85px;
     margin: 5px;
