@@ -33,14 +33,15 @@
 
     <!-- Link to the api keys for your firebase project -->
     <script src="./scripts/firebaseAPI.js"></script>
+
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/profile.css">
 </head>
 
-<body style="border-style: none;border-color: var(--bs-yellow)">
+<body>
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="main.html"
-                style="color: #ffa952;font-size: 25px;">Menu.It</a><button data-bs-toggle="collapse"
-                class="navbar-toggler" data-bs-target="#navcol-2"
-                style="background: #ffa952;color: var(--bs-white);"><span class="visually-hidden">Toggle
+        <div class="container"><a class="navbar-brand" href="main.html">Menu.it</a><button data-bs-toggle="collapse"
+                class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg"
                         width="1em" height="1em" viewBox="0 0 24 24" fill="none">
                         <path
@@ -62,30 +63,26 @@
                 </ul>
 
 
-                <div class="col padMar" style="margin:8px 8px; padding:8px 18px">
+                <div class="col padMar">
                     <!--SEARCH BAR-->
                     <div class="col justify-content-end">
                         <div class="input-group">
-                            <input class="form-control autocomplete" type="text" placeholder="Search..." id="searchbox"
-                                style="height: 32px; border-color: #ffa952;">
-                            <button class="btn btn-warning" type="button" id="searchbutton"
-                                style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
-                                <i class="material-icons"
-                                    style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
+                            <input class="form-control autocomplete" type="text" placeholder="Search..." id="searchbox">
+                            <button class="btn btn-warning" type="button" id="searchbutton">
+                                <i class="material-icons">search</i></button>
                         </div>
                     </div>
                 </div>
 
                 <!--PROFILE-->
                 <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
-                    id="signout"
-                    style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px; width: 90px; align-items: center">Sign Out</a>
+                    id="signout">Sign Out</a>
             </div>
         </div>
     </nav>
 
     <!--User Profile-->
-    <div class="container" style="margin-top: 7%; margin-bottom: 7%">
+    <div class="container" id="profile-container">
         <div class="row gutters">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                 <div class="card h-100">
@@ -93,14 +90,13 @@
                         <div class="account-settings">
                             <div class="user-profile">
                                 <div class="user-avatar">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="User Photo"
-                                        style="border-radius: 50%; max-width: 100%">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="User Photo">
                                 </div>
                                 <br>
                             </div>
                             <div class="about">
-                                <h5 style="color: #ffa952">About</h5>
-                                <p>Full Stack Designer I enjoy creating user-centric, delightful and human
+                                <h5>About</h5>
+                                <p>Full Stack Designer. I enjoy creating user-centric, delightful and human
                                     experiences.</p>
                             </div>
                         </div>
@@ -114,7 +110,7 @@
                             <fieldset id="personalInfoFields" disabled>
                                 <div class="row gutters">
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <h6 class="mb-2" style="color: #ffa952">Personal Details</h6>
+                                        <h6 class="mb-2">Personal Details</h6>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
@@ -147,7 +143,7 @@
                                 </div>
                                 <div class="row gutters">
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <h6 class="mt-3 mb-2" style="color: #ffa952">Address</h6>
+                                        <h6 class="mt-3 mb-2">Address</h6>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
@@ -183,12 +179,10 @@
                             <div class="row gutters">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="text-right">
+                                        <button type="button" id="edit" name="submit" class="btn"
+                                            onclick="editUserInfo()">Edit</button>
                                         <button type="button" id="submit" name="submit" class="btn"
-                                            onclick="editUserInfo()"
-                                            style="background: #ffe79a; color: #ffa952">Edit</button>
-                                        <button type="button" id="submit" name="submit" class="btn"
-                                            onclick="saveUserInfo()"
-                                            style="background: #ffa952; color: var(--bs-white)">Save</button>
+                                            onclick="saveUserInfo()">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -199,15 +193,15 @@
         </div>
     </div>
 
-    <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
+    <footer class="footer-basic">
         <ul class="list-inline">
-            <li class="list-inline-item" style="font-size: 14px;"><a href="./main.html">Home</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
+            <li class="list-inline-item"><a href="./main.html">Home</a></li>
+            <li class="list-inline-item"><a href="#">Features</a></li>
+            <li class="list-inline-item"><a href="#">FAQs</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
             <li class="list-inline-item"></li>
         </ul>
-        <p class="copyright">Menu.It © 2021</p>
+        <p class="copyright">Menu.it © 2021</p>
     </footer>
 
     <script>

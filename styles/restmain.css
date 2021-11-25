@@ -14,8 +14,7 @@ body {
 }
 
 .col {
-    margin: 8px 8px;
-    padding: 8px 18px
+    padding: 8px 18px;
 }
 
 #searchbox {
@@ -32,6 +31,26 @@ body {
 #searchbutton .material-icons {
     color: rgb(255, 169, 82);
     border-color: var(--bs-white);
+}
+
+#sign-out {
+    height: 32px;
+    margin-left: 0px;
+    background: #ffa952;
+    font-size: 13px;
+    width: 85px;
+    margin: 5px;
+    text-align: center;
+}
+
+#profile-name {
+    height: 32px;
+    margin-left: 0px;
+    background: #ffa952;
+    font-size: 13px;
+    width: 85px;
+    margin: 5px;
+    text-align: center;
 }
 
 .row {
