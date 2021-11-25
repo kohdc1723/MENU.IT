@@ -1,0 +1,73 @@
+body {
+    border-style: none;
+    border-color: var(--bs-yellow);
+}
+
+.navbar {
+    top: 0;
+}
+
+.navbar-brand {
+    color: #ffa952 !important;
+    font-size: 25px;
+}
+
+.navbar-toggler {
+    background: #ffa952 !important;
+    color: var(--bs-white) !important;
+}
+
+.col {
+    margin: 8px 8px;
+    padding: 8px 18px;
+}
+
+#searchbox {
+    height: 32px;
+    border-color: #ffa952;
+}
+
+#searchbutton {
+    height: 32px;
+    background: var(--bs-white);
+    border-color: #ffa952;
+}
+
+#searchbutton .material-icons {
+    color: rgb(255, 169, 82);
+    border-color: var(--bs-white);
+}
+
+#signin {
+    height: 32px;
+    margin-left: 0px;
+    background: #ffa952;
+    font-size: 13px;
+    width: 85px;
+    margin: 5px;
+    text-align: center;
+}
+
+#content-container {
+    margin-top: 5%;
+}
+
+.display-6 {
+    text-align: center;
+    color: #ffa952;
+    font-weight: bold;
+}
+
+#firebaseui-auth-container {
+    margin-bottom: 10%;
+}
+
+.footer-basic {
+    margin-bottom: 3%;
+    height: 85px;
+    border-top: 1px solid #E8E8E8
+}
+
+.list-inline-item {
+    font-size: 14px;
+}

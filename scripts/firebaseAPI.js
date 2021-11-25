@@ -23,7 +23,7 @@ const firebaseConfig = {
         })
 
         var signout = document.getElementById('sign-out');
-        signout.innerHTML = 'sign out';
+        signout.innerHTML = 'Sign out';
         signout.addEventListener('click', ()=> {
           firebase.auth().signOut();
           window.location.href = "./main.html";

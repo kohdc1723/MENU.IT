@@ -1,0 +1,90 @@
+body {
+    border-style: none;
+    border-color: var(--bs-yellow);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.navbar-brand {
+    color: #ffa952 !important;
+    font-size: 25px;
+}
+
+.navbar-toggler {
+    background: #ffa952 !important;
+    color: var(--bs-white) !important;
+}
+
+.col {
+    padding: 8px 18px;
+}
+
+#searchbox {
+    height: 32px;
+    border-color: #ffa952;
+}
+
+#searchbutton {
+    height: 32px;
+    background: var(--bs-white);
+    border-color: #ffa952;
+}
+
+#searchbutton .material-icons {
+    color: rgb(255, 169, 82);
+    border-color: var(--bs-white);
+}
+
+#sign-out {
+    height: 32px;
+    margin-left: 0px;
+    background: #ffa952;
+    font-size: 13px;
+    width: 85px;
+    margin: 5px;
+    text-align: center;
+}
+
+#profile-name {
+    height: 32px;
+    margin-left: 0px;
+    background: #ffa952;
+    font-size: 13px;
+    width: 85px;
+    margin: 5px;
+    text-align: center;
+}
+
+.px-4 {
+    background: var(--bs-white);
+}
+
+.px-4 h1 {
+    color: rgb(255,169,82) !important;
+}
+
+.features-boxed {
+    background: #ffa952;
+}
+
+.features-boxed h2 {
+    color: var(--bs-white);
+}
+
+#show {
+    background-color: var(--bs-white) !important;
+}
+
+.footer-basic {
+    margin-bottom: 3%;
+    height: 85px;
+    border-top: 1px solid #E8E8E8
+}
+
+.list-inline-item {
+    font-size: 14px;
+}

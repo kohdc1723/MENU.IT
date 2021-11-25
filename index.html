@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Menu.It</title>
+    <title>Menu.it</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -33,16 +33,15 @@
 
     <!-- Link to the api keys for your firebase project -->
     <script src="./scripts/firebaseAPI.js"></script>
-    
+
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 
-<body style="border-style: none;border-color: var(--bs-yellow);">
-
+<body>
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="main.html"
-                style="color: #ffa952;font-size: 25px;">Menu.it</a><button data-bs-toggle="collapse"
-                class="navbar-toggler" data-bs-target="#navcol-2"
-                style="background: #ffa952;color: var(--bs-white);"><span class="visually-hidden">Toggle
+        <div class="container"><a class="navbar-brand" href="main.html">Menu.it</a><button data-bs-toggle="collapse"
+                class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg"
                         width="1em" height="1em" viewBox="0 0 24 24" fill="none">
                         <path
@@ -62,81 +61,73 @@
                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
-                <div class="col padMar" style="margin:8px 8px; padding:8px 18px">
+                <div class="col padMar">
                     <!--SEARCH BAR-->
                     <div class="col justify-content-end">
                         <div class="input-group">
-                            <input class="form-control autocomplete" type="text" id="searchbox" placeholder="Search..."
-                                style="height: 32px; border-color: #ffa952;">
-                            <button class="btn btn-warning" type="button" id="searchbutton"
-                                style="height: 32px;background: var(--bs-white);border-color: #ffa952;">
-                                <i class="material-icons"
-                                    style="color: rgb(255,169,82);border-color: var(--bs-white);">search</i></button>
+                            <input class="form-control autocomplete" type="text" id="searchbox" placeholder="Search...">
+                            <button class="btn btn-warning" type="button" id="searchbutton">
+                                <i class="material-icons">search</i></button>
                         </div>
                     </div>
                 </div>
                 <!--PROFILE-->
                 <a class="btn d-md-flex d-lg-flex justify-content-lg-center action-button" role="button"
-                    href="login.html"
-                    style="height: 32px; margin:8px 8px; padding: 8px 18px; background: #ffa952;font-size: 14px; width: 80px; align-items: center">Sign
+                    href="login.html" id="sign-in">Sign
                     In</a>
             </div>
         </div>
     </nav>
-    <div class="px-4 py-5 my-5 text-center" style="background: var(--bs-white);">
-        <h1 class="display-5 fw-bold" style="color: rgb(255,169,82);">Find Menus Now!</h1>
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Find Menus Now!</h1>
         <div class="col-lg-6 m-auto">
             <p class="lead mb-4">We provide the latest menus within a minute. ADD MORE...</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"><a
                     class="btn btn-primary btn-lg d-lg-flex justify-content-lg-center align-items-lg-center px-4 gap-3"
-                    type="button" href="main.html"
-                    style="background: rgb(255,169,82);border-style: none;width: auto;font-size: 14px;height: auto;">Explore</a>
+                    type="button" href="main.html">Explore</a>
             </div>
         </div>
     </div>
-    <div class="features-boxed" style="background: #ffa952; margin-bottom: 3%;">
+    <div class="features-boxed">
         <div class="container">
             <div class="row justify-content-center features">
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box">
-                        <i class="la la-map-marker icon" style="color: var(--bs-white);"></i>
                         <h3 class="name">Find a Restaurant<br></h3>
-                        <p class="description" style="color: var(--bs-white);">Aenean tortor est, vulputate quis leo in,
-                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#"
-                            style="color: var(--bs-white);border-color: var(--bs-white);">Learn more »</a>
+                        <p class="description">Aenean tortor est, vulputate quis leo in,
+                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more"
+                            href="#">Learn more »</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box">
-                        <i class="la la-check-circle icon" style="color: var(--bs-white);"></i>
                         <h3 class="name">Check the Latest Menu<br></h3>
-                        <p class="description" style="color: var(--bs-white);">Aenean tortor est, vulputate quis leo in,
-                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#"
-                            style="color: var(--bs-white);border-color: var(--bs-white);">Learn more »</a>
+                        <p class="description">Aenean tortor est, vulputate quis leo in,
+                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more"
+                            href="#">Learn more »</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box">
-                        <i class="la la-cloud-upload icon" style="color: var(--bs-white);"></i>
                         <h3 class="name">Upload images<br></h3>
-                        <p class="description" style="color: var(--bs-white);">Aenean tortor est, vulputate quis leo in,
-                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#"
-                            style="color: var(--bs-white);border-color: var(--bs-white);">Learn more »</a>
+                        <p class="description">Aenean tortor est, vulputate quis leo in,
+                            vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more"
+                            href="#">Learn more »</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer-basic" style="margin-bottom: 3%; height: 85px; border-top: 1px solid #E8E8E8">
+    <footer class="footer-basic">
         <ul class="list-inline">
-            <li class="list-inline-item" style="font-size: 14px;"><a href="./main.html">Home</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">Features</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">FAQs</a></li>
-            <li class="list-inline-item"><a href="#" style="font-size: 14px;">About</a></li>
+            <li class="list-inline-item"><a href="./main.html">Home</a></li>
+            <li class="list-inline-item"><a href="#">Features</a></li>
+            <li class="list-inline-item"><a href="#">FAQs</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
             <li class="list-inline-item"></li>
         </ul>
-        <p class="copyright">Menu.It © 2021</p>
+        <p class="copyright">Menu.it © 2021</p>
     </footer>
 
     <!-- index.html JS file -->
