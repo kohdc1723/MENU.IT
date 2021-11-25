@@ -33,9 +33,11 @@
 
     <!-- Link to the api keys for your firebase project -->
     <script src="./scripts/firebaseAPI.js"></script>
+    
 </head>
 
 <body style="border-style: none;border-color: var(--bs-yellow);">
+
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search">
         <div class="container"><a class="navbar-brand" href="main.html"
                 style="color: #ffa952;font-size: 25px;">Menu.it</a><button data-bs-toggle="collapse"
@@ -137,23 +139,8 @@
         <p class="copyright">Menu.It © 2021</p>
     </footer>
 
-    <script>
-        // Search Function
-        var searchbutton = document.getElementById('searchbutton');
-        searchbutton.addEventListener('click', () => {
-            var searchinput = document.getElementById('searchbox').value;
-            db.collection('Restaurants').where('restaurantname', '==', searchinput).get()
-                .then((result) => {
-                    result.forEach((doc) => {
-                         var restaurantid = doc.id;
-                         window.location.href = `./restmain.html?id=${restaurantid}`;
-                     })
-                })
-                .catch(() => {
-                    alert('Cannot Find Restaurant');
-                })
-        })
-    </script>
+    <!-- index.html JS file -->
+    <script src="./scripts/index.js"></script>
     
 </body>
 

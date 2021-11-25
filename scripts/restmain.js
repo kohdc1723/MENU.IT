@@ -1,3 +1,27 @@
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var buttons = document.getElementById("buttons");
+img.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.style.display = "block";
+    //captionText.innerHTML = this.alt;
+    buttons.style.display = "block";
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
 // Change restautant information and restaurant name using querystring data
 var querystring = new URLSearchParams(window.location.search);
 db.collection('Restaurants').doc(querystring.get('id')).get().then((result) => {
@@ -64,41 +88,27 @@ function displayGallery() {
         }
         // show first image as default in a big image field
         document.getElementById('myImg').src = urlarray[0][0];
+        console.log(urlarray[0][0]);
+        // validate show
+        console.log(urlarray);
+        document.getElementById('datevalidated').innerHTML = urlarray[0][1].toDate();
     })
 }
 displayGallery();
 
 // Clickable Gallery
 function switchimage(img) {
-    document.getElementById('myImg').src = img.src;
+    var imgurl = img.src;
+    var imgtimestamp;
+    document.getElementById('myImg').src = imgurl;
+    db.collection('Menus').where('imageURL', '==', imgurl).onSnapshot((snapshot)=> {
+        snapshot.forEach((doc)=> {
+            imgtimestamp = doc.data().timestamp;
+            document.getElementById('datevalidated').innerHTML = imgtimestamp.toDate();
+        })
+    })
 }
 
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-var buttons = document.getElementById("buttons");
-img.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.style.display = "block";
-    //captionText.innerHTML = this.alt;
-    buttons.style.display = "block";
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-
-// validate button functions
 //calls 2 other functions when validate is clicked
 function updateValidate() {
     clickedValidate();
@@ -109,7 +119,7 @@ function updateValidate() {
 function incrementValidate() {
     //gets the main image's src data
     let mainImgSrc = document.getElementById("myImg").getAttribute("src");
-    console.log(mainImgSrc);
+    // console.log(mainImgSrc);
 
     db.collection("Menus").get().then((snapshot) => {
         snapshot.forEach(doc => {
@@ -118,7 +128,6 @@ function incrementValidate() {
 
             //if the mainimgsrc is in the query, then say it matches!
             if (mainImgSrc == query) {
-                console.log("found one!");
                 var URLindocumentID = doc.id;
 
                 console.log(URLindocumentID); //provides the document ID with the URL field
@@ -156,6 +165,9 @@ function incrementValidate() {
 
 //changes the color
 function clickedValidate() {
+    // //disables it after ONE click
+    document.getElementById("validate").disabled = true;
+
     //changed background color and text color
     document.querySelector('#validate').style.backgroundColor = '#ef5a5a';
     document.getElementById("validate").style.color = 'white';
