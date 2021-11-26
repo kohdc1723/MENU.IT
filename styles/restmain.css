@@ -67,6 +67,12 @@ body {
     margin-top: 3%;
 }
 
+.text-right p{
+    font-size: 30px;
+    color:orange;
+    font-weight: bolder;
+}
+
 #validate {
     background: #ffe79a;
     color: #ffa952;
@@ -106,20 +112,24 @@ body {
     color: #ffa952;
 }
 
+.material-icons{
+    font-size: 15px;
+}
+
 #contact {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #hours {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #price {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #location {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #myImg {

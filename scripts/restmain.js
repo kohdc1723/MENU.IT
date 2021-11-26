@@ -89,6 +89,7 @@ function displayGallery() {
         // show first image as default in a big image field
         document.getElementById('myImg').src = urlarray[0][0];
         console.log(urlarray[0][0]);
+        
         // validate show
         console.log(urlarray);
         document.getElementById('datevalidated').innerHTML = urlarray[0][1].toDate();
@@ -151,12 +152,6 @@ function incrementValidate() {
 
                         document.getElementById("datevalidated").innerHTML = theTime.toDate();
                     })
-
-                // updateTimeStamp
-                //     .onSnapshot(doc => {
-                //         // console.log(doc.data().validatecount);
-                //         document.getElementById("showcount").innerHTML = doc.data().validatecount;
-                //     })
             }
         })
 
