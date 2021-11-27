@@ -167,7 +167,7 @@ function clickedValidate() {
     document.querySelector('#validate').style.backgroundColor = '#ef5a5a';
     document.getElementById("validate").style.color = 'white';
     document.getElementById("validate").style.padding = '6px 10px';
-    document.getElementById("validate").style.width = '115px';
+    document.getElementById("validate").style.width = '110px';
     document.getElementById("validate").style.fontSize = '12px';
     document.getElementById("validate").style.fontWeight = '20px';
     document.getElementById("validate").style.borderColor = '#ef5a5a'
