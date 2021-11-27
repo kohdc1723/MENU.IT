@@ -69,7 +69,7 @@ body {
 }
 
 .text-right p {
-    font-size: 22px;
+    font-size: 18px;
     color: #ffa952;
     font-weight: bolder;
     margin-bottom: 10px;
@@ -95,10 +95,6 @@ body {
     margin-right: 30px;
     font-size: 12px;
     padding: 5px 10px;
-}
-
-button:active {
-    background-color: black;
 }
 
 #uploadimage {
