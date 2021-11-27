@@ -3,6 +3,12 @@ body {
     border-color: var(--bs-yellow);
 }
 
+@media screen and (max-width: 700px) {
+    .onlyDesktopSees{
+        display:none;
+    }
+}
+
 .navbar-brand {
     color: #ffa952 !important;
     font-size: 25px;
