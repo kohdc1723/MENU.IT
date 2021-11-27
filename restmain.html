@@ -89,21 +89,21 @@
 
     <div class="container-fluid top-container">
         <div class="row">
-            <div class="col-12 col-md-6 col-xl-4 offset-xl-2">
+            <div class="col-12 col-md-6 col-xl-4 offset-xl-2 mobile">
                 <h2 id="restoName"></h2>
                 <h5>Menu last validated on: <span id="datevalidated" class="fw-bold showdate"></span></h5>
                 <div class="text-right">
-                    <p>Is menu validated? <button class="btn btn-primary" data-bss-hover-animate="pulse" id="validate"
+                    <p>Is the menu valid? <button class="btn btn-primary" data-bss-hover-animate="pulse" id="validate"
                             type="button" onclick="updateValidate()"><img class="image-left"
                                 src="./images/arrowwhite.gif"><span><strong>VALIDATE</strong></span><img
-                                class="image-right" src="./images/arrowwhite.gif"></button>
+                                class="image-right" src="./images/arrowwhite.gif"></button></p>
                         <br>
                     <p>If not, upload the latest one! <button class="btn btn-primary" data-bss-hover-animate="pulse"
                             id="uploadimage" type="button" onclick=""><img class="image-left"
                                 src="./images/arrowwhite.gif"><span><strong>UPLOAD</strong></span><img
                                 class="image-right" src="./images/arrowwhite.gif"></button></p>
                 </div>
-                <div class="col-sm-4" id="restaurant">
+                <div class="col-sm-4 onlyDesktopSees" id="restaurant">
                     <div class="col-sm fs-4 pt-1">
                         <h6>Restaurant Information</h6>
                         <div><i class="material-icons p-2">call</i><span id="contact"></span></div>
@@ -124,7 +124,7 @@
                     </template>
                 </div>
             </div>
-
+            
             <!-- The Modal -->
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
