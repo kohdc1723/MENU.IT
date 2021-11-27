@@ -56,7 +56,7 @@ body {
 
 .row {
     margin-top: 5%;
-    margin-bottom: 5%
+    margin-bottom: 0;
 }
 
 #restoName {
@@ -68,37 +68,59 @@ body {
     margin-top: 3%;
 }
 
-.text-right p{
-    font-size: 30px;
-    color:orange;
+.text-right p {
+    font-size: 22px;
+    color: #ffa952;
     font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.text-right button img.image-left {
+    width: 20px;
+    height: 20px;
+    transform: rotate(270deg) translateX(2px);
+}
+
+.text-right button img.image-right {
+    width: 20px;
+    height: 20px;
+    transform: rotate(90deg) translateX(-2px);
 }
 
 #validate {
+    float: right;
     background: #ffe79a;
     color: #ffa952;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    font-size: 14px;
-    padding: 6px 12px
+    border-color: #ffe79a;
+    margin-right: 30px;
+    font-size: 12px;
+    padding: 5px 10px;
 }
 
-.text-right .btn {
+button:active {
+    background-color: black;
+}
+
+#uploadimage {
+    float: right;
     background: #ffa952;
     color: var(--bs-white);
-    margin-bottom: 5px;
-    font-size: 14px;
+    border-color: #ffa952;
+    margin-right: 30px;
+    font-size: 12px;
+    padding: 5px 13px;
 }
 
 .row .col-sm-4 {
-    width: 90%;
+    width: 95%;
     height: 60%;
     margin-top: 5%;
+    margin-bottom: 25px;
 }
 
-.col-sm-4>h5 {
-    padding: 8px;
-    margin-top: 5px;
+.col-sm-4 h6 {
+    padding-left: 5px;
+    margin-top: 8px;
 }
 
 .col-sm {
@@ -113,7 +135,7 @@ body {
     color: #ffa952;
 }
 
-.material-icons{
+.material-icons {
     font-size: 15px;
 }
 
@@ -135,9 +157,9 @@ body {
 
 #myImg {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: fill;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -146,7 +168,7 @@ body {
     display: flex;
     overflow: scroll;
     width: 100%;
-    height: 40%;
+    height: 30%;
     background-color: #ffa952;
     padding-top: 3%;
 }
