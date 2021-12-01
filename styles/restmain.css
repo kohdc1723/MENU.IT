@@ -317,7 +317,7 @@ button {
 
 @media (max-width: 500px) {
     .text-right p {
-        font-size: 15px;
+        font-size: 22px;
     }
 
     #validate {
@@ -337,11 +337,13 @@ button {
         color: var(--bs-white);
         border-color: #ffa952;
         margin-right: 5px;
+        margin-top: 5px;
         font-size: 12px;
         padding: 5px 10px;
     }
 
     .text-right h5 {
         font-size: 16px;
+        margin-top: 40px;
     }
 }

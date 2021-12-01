@@ -83,6 +83,11 @@ body {
     border-color: var(--bs-white);
 }
 
+.learn-more:hover {
+    color:var(--bs-white);
+
+}
+
 .footer-basic {
     margin-bottom: 3%;
     height: 85px;
