@@ -21,25 +21,51 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── login.html 				 # login HTML file, the log-in page
+├── main.html				 # main HTML file, landing page after login-in or user-set up
+├── restmain.html			 # restaurant HTML file, restaurant page with all of the menu images and validate/update functions
+├── upload.html				 # upload HTML file, the page where users can upload new menu images
+└── README.md				 # README file
 
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    /arrowwhite.jpg          # image for the update and validate button
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+	/auth-function			 # javascript for authen
+    /firebaseAPI			 # javascript for API
+	/index					 # javascript for index
+	/login					 # javascript for login
+	/main					 # javascript for main
+	/my_script				 # javascript for my_script
+	/profile				 # javascript for profile
+	/restmain				 # javascript for restmain
+	/upload					 # javascript for upload
 ├── styles                   # Folder for styles
-    /blah.css                # 
+    /index.css				 # style for index.html	
+	/login.css				 # style for login.html
+	/main.css				 # style for main.html
+	/profile.css			 # style for profile.html
+	/restmain.css			 # style for restmain.html
+	/upload.css				 # style for upload.html
+
 
 Firebase hosting files: 
-├── .firebaserc...
+├── .firebase
+	/hosting..cache
+├── .firebaserc
+├── 404.html
+├── firebase.json
+├── firestore.indexes.json
+├── firestore.rules
+├── storage.rules	
 
 
 ```
 
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
+## Contact
+* Elaine Lai - elai44@my.bcit.ca
+* Skylar Park - jpark394@my.bcit.ca
+* Chan Koh - dkoh8@my.bcit.ca
 
