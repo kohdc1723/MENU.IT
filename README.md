@@ -1,23 +1,18 @@
-## My Web Application (Title)
+## Menu.it
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
-* Hi my name is Chan.
-* Hi my name is Elaine.
-* Hi my name is Skylar.
-* Hi Chan again
-* Hi This is Elaine again!
+Menu.it is an app that offers one single platform for you to find and upload updated menus all within one minute!
 	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
+* Firebase
 	
 ## Content
 Content of the project folder:
@@ -27,6 +22,7 @@ Content of the project folder:
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
+
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
