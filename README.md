@@ -38,7 +38,6 @@ It has the following subfolders and files:
 	/index					 # javascript for index
 	/login					 # javascript for login
 	/main					 # javascript for main
-	/my_script				 # javascript for my_script
 	/profile				 # javascript for profile
 	/restmain				 # javascript for restmain
 	/upload					 # javascript for upload

@@ -120,7 +120,6 @@ function updateValidate() {
 function incrementValidate() {
     //gets the main image's src data
     let mainImgSrc = document.getElementById("myImg").getAttribute("src");
-    // console.log(mainImgSrc);
 
     db.collection("Menus").get().then((snapshot) => {
         snapshot.forEach(doc => {
@@ -131,7 +130,7 @@ function incrementValidate() {
             if (mainImgSrc == query) {
                 var URLindocumentID = doc.id;
 
-                console.log(URLindocumentID); //provides the document ID with the URL field
+                // console.log(URLindocumentID); //provides the document ID with the URL field
 
                 var updateTimeStamp = db.collection("Menus").doc(URLindocumentID);
 
@@ -146,8 +145,7 @@ function incrementValidate() {
                 updateTimeStamp
                     .onSnapshot(doc => {
                         //gets timestamp of the specific documentID
-                        var theTime = doc.data().timestamp;
-                        console.log(theTime.toDate());
+                        var theTime = doc.data().timestamp; //gets time and date
                         // const validatedDate = theTime.toDate().toDateString(); //if ONLY WANT THE DATE
 
                         document.getElementById("datevalidated").innerHTML = theTime.toDate();
