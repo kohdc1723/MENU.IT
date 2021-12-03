@@ -77,7 +77,7 @@ function displayResto() {
       .then(updatedRestos => {
           updatedRestos.forEach(doc => {
               var restoName = doc.data().restaurantname;
-              console.log(restoName);
+            //   console.log(restoName);
               var testRestoCard = restoCardTemplate.content.cloneNode(true);
               testRestoCard.querySelector('#restoName').innerHTML = restoName;
               testRestoCard.querySelector('a').href = `./restmain.html?id=${doc.id}`;

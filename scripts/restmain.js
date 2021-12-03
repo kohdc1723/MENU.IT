@@ -88,10 +88,10 @@ function displayGallery() {
         }
         // show first image as default in a big image field
         document.getElementById('myImg').src = urlarray[0][0];
-        console.log(urlarray[0][0]);
+        // console.log(urlarray[0][0]);
         
         // validate show
-        console.log(urlarray);
+        // console.log(urlarray);
         document.getElementById('datevalidated').innerHTML = urlarray[0][1].toDate();
     })
 }
